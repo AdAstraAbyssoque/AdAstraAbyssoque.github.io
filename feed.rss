@@ -4,28 +4,74 @@
         <title>Vitepress Theme Async</title>
         <link>undefined</link>
         <description>一个简洁、优雅、轻量、美观的 vitepress 主题</description>
-        <lastBuildDate>Thu, 16 May 2024 08:17:39 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 16 May 2024 12:55:28 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[2024CCPC郑州邀请赛游记]]></title>
             <link>undefined/posts/CCPC郑州游记</link>
             <guid>undefined/posts/CCPC郑州游记</guid>
-            <pubDate>Thu, 16 May 2024 08:17:20 GMT</pubDate>
+            <pubDate>Thu, 16 May 2024 12:55:16 GMT</pubDate>
             <enclosure url="https://img2.imgtp.com/2024/05/16/Go8pYoZe.png" length="0" type="image/png"/>
         </item>
         <item>
-            <title><![CDATA[一些港科广有用的资源]]></title>
-            <link>undefined/posts/HKUSTGZ</link>
-            <guid>undefined/posts/HKUSTGZ</guid>
-            <pubDate>Thu, 16 May 2024 08:17:20 GMT</pubDate>
+            <title><![CDATA[UFUG 2104佛脚]]></title>
+            <link>undefined/posts/UFUG 2104 Final</link>
+            <guid>undefined/posts/UFUG 2104 Final</guid>
+            <pubDate>Thu, 16 May 2024 12:55:16 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="limit-theorems" tabindex="-1">Limit Theorems <a class="header-anchor" href="#limit-theorems" aria-label="Permalink to &quot;Limit Theorems&quot;">&ZeroWidthSpace;</a></h2>
+<h3 id="马尔可夫不等式" tabindex="-1">马尔可夫不等式 <a class="header-anchor" href="#马尔可夫不等式" aria-label="Permalink to &quot;马尔可夫不等式&quot;">&ZeroWidthSpace;</a></h3>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[UST办事攻略]]></title>
+            <link>undefined/posts/UST办事攻略</link>
+            <guid>undefined/posts/UST办事攻略</guid>
+            <pubDate>Thu, 16 May 2024 12:55:16 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="重要链接" tabindex="-1">重要链接 <a class="header-anchor" href="#重要链接" aria-label="Permalink to &quot;重要链接&quot;">&ZeroWidthSpace;</a></h2>
+<h3 id="教学侧" tabindex="-1">教学侧 <a class="header-anchor" href="#教学侧" aria-label="Permalink to &quot;教学侧&quot;">&ZeroWidthSpace;</a></h3>
+<ol>
+<li>
+<p><strong>CES的UG教育网站</strong>提供了有关课程描述、学制要求和学习道路的详细信息：<a href="https://vptlo.hkust-gz.edu.cn/ugeducation/#/" target="_blank" rel="noreferrer">CES的UG教育网站</a></p>
+</li>
+<li>
+<p><strong>课程详情</strong>可以在以下链接查看：<a href="https://w5.hkust-gz.edu.cn/wcq/cgi-bin/2330/" target="_blank" rel="noreferrer">课程详情链接</a></p>
+</li>
+<li>
+<p><strong>UG课程介绍、通用课程与基础课程</strong>：</p>
+<ul>
+<li><a href="https://vptlo.hkust-gz.edu.cn/ugeducation/#/UC/#/courses" target="_blank" rel="noreferrer">UG课程介绍</a></li>
+<li><a href="https://vptlo.hkust-gz.edu.cn/ugeducation/#/UC/#/common" target="_blank" rel="noreferrer">通用课程</a></li>
+<li><a href="https://vptlo.hkust-gz.edu.cn/ugeducation/#/UC/#/education" target="_blank" rel="noreferrer">基础课程</a></li>
+</ul>
+</li>
+<li>
+<p><strong>专业课程要求</strong>：</p>
+<ul>
+<li>人工智能专业课程要求：<a href="https://vptlo.hkust-gz.edu.cn/general/index/show_file/file_id/OTRkZkozbVNOdmQ5Y05DK3IvMzRIbVM0Vk5GeHAvVFBOT2ZNdjFmQWhSV2lUSncrWWo0UkF5VW9zcS9nb25xa1dYU0pLOWtjdVZKb0t2K0ExUQ==" target="_blank" rel="noreferrer">人工智能专业课程要求</a>和<a href="https://vptlo.hkust-gz.edu.cn/general/index/show_file/file_id/YzNmMjlneDA5Z01IK2RObkNjZEdNT1Bjc2ErcHo2UEpxSEVMbFRVRGVCaDFOK3k0cjJldEhjYnhuckZzSnZESTRUa2RJWlowNW9vdzk0N1R4QQ==" target="_blank" rel="noreferrer">路径</a>。</li>
+<li>数据科学和大数据技术专业课程要求：<a href="https://vptlo.hkust-gz.edu.cn/general/index/show_file/file_id/NDAyMzF4em9DdlRmdjJUZWZKamE0RHh3cVFrZkpVcHMvUkRSVElicC9OK0FuUzQ0U2YzcXpLclNGU3UxdzBDcGtDYnNzU1poU1QvWkt1ci9lQQ==" target="_blank" rel="noreferrer">数据科学和大数据技术专业课程要求</a>和<a href="https://vptlo.hkust-gz.edu.cn/general/index/show_file/file_id/YTEwNTNrSDV3bzlPcHR0ckgxUEphSk8yT1YrL2JCQ2NGTVBFcHhpL0dkbElCSk9iWGZBSmgweTcwTnhGaEpvRHg4cmh0em1ONWx4YzUrUmorQQ==" target="_blank" rel="noreferrer">路径</a>。</li>
+<li>智能制造专业课程要求：<a href="https://vptlo.hkust-gz.edu.cn/general/index/show_file/file_id/MTFjYTJRa0NEMWZDZ1FRZ3YvaitLN3QxOWxnQnI4aXBqVWg2eGV0a3I3emFNcllPR2xWYitkRVdwZWUrZ2hLK2xKbU15NmxJOGpCSGRMWWxodw==" target="_blank" rel="noreferrer">智能制造专业课程要求</a>和<a href="https://vptlo.hkust-gz.edu.cn/general/index/show_file/file_id/ZDhkMVVkY1U0VkRsM1JGVnpJM3ArK2xGKzR4SGVmZmhaVTREamZ1bWdyRXpHaHBGN0t4R1dpcUdYMjVyZFIxSnM5TTIrb2Npd1Vkam93dG5NUQ==" target="_blank" rel="noreferrer">路径</a>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="生活侧" tabindex="-1">生活侧 <a class="header-anchor" href="#生活侧" aria-label="Permalink to &quot;生活侧&quot;">&ZeroWidthSpace;</a></h3>
+<ol>
+<li><a href="https://pinbox.hkust-gz.edu.cn/" target="_blank" rel="noreferrer">校长信箱</a>。</li>
+</ol>
+<h2 id="学校架构" tabindex="-1">学校架构 <a class="header-anchor" href="#学校架构" aria-label="Permalink to &quot;学校架构&quot;">&ZeroWidthSpace;</a></h2>
+<h2 id="学生侧活动" tabindex="-1">学生侧活动 <a class="header-anchor" href="#学生侧活动" aria-label="Permalink to &quot;学生侧活动&quot;">&ZeroWidthSpace;</a></h2>
+<h2 id="注意事项" tabindex="-1">注意事项 <a class="header-anchor" href="#注意事项" aria-label="Permalink to &quot;注意事项&quot;">&ZeroWidthSpace;</a></h2>
+<ol>
+<li>所有本科生必须在 5 月 31 日之前完成 CITI 研究诚信在线培训课程。</li>
+</ol>
+]]></content:encoded>
             <enclosure url="https://img2.imgtp.com/2024/05/16/cJLuw9ig.jpg" length="0" type="image/jpg"/>
         </item>
         <item>
             <title><![CDATA[Web Design Resources]]></title>
             <link>undefined/posts/WebDesign</link>
             <guid>undefined/posts/WebDesign</guid>
-            <pubDate>Thu, 16 May 2024 08:17:20 GMT</pubDate>
+            <pubDate>Thu, 16 May 2024 12:55:16 GMT</pubDate>
             <content:encoded><![CDATA[<p>下面给出一些可能的有用的素材和网站。</p>
 <h2 id="图片和图标" tabindex="-1">图片和图标 <a class="header-anchor" href="#图片和图标" aria-label="Permalink to &quot;图片和图标&quot;">&ZeroWidthSpace;</a></h2>
 <ul>
@@ -59,6 +105,18 @@
 </ul>
 ]]></content:encoded>
             <enclosure url="https://img2.imgtp.com/2024/05/16/siSQ05oz.jpg" length="0" type="image/jpg"/>
+        </item>
+        <item>
+            <title><![CDATA[食在科广]]></title>
+            <link>undefined/posts/食在科广</link>
+            <guid>undefined/posts/食在科广</guid>
+            <pubDate>Thu, 16 May 2024 12:55:16 GMT</pubDate>
+            <content:encoded><![CDATA[<h2 id="早餐" tabindex="-1">早餐 <a class="header-anchor" href="#早餐" aria-label="Permalink to &quot;早餐&quot;">&ZeroWidthSpace;</a></h2>
+<ol>
+<li>KFC大神卡买早餐，目前是校内品质最稳定的早餐，大神卡两件套6折，且位于去教室的路上，很适合赶时间。</li>
+</ol>
+]]></content:encoded>
+            <enclosure url="https://img2.imgtp.com/2024/05/16/cJLuw9ig.jpg" length="0" type="image/jpg"/>
         </item>
     </channel>
 </rss>
