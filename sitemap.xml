@@ -83,6 +83,13 @@
 
   
   <url>
+    <loc>https://adastraabyssoque.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2024-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://adastraabyssoque.github.io/tags/%E8%87%AA%E5%AD%A6/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -91,13 +98,6 @@
   
   <url>
     <loc>https://adastraabyssoque.github.io/tags/AIAA-2205/</loc>
-    <lastmod>2024-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://adastraabyssoque.github.io/tags/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2024-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
