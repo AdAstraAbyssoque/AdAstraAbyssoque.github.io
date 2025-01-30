@@ -161,6 +161,10 @@ nav ul li a {
   color: var (--primary-color);
 }
 
+.contact-info .fa-orcid {
+  color: #A6CE39;  /* ORCID's brand color */
+}
+
 .social-links a {
   margin: 0 0.5rem;
   color: var(--text-color);
