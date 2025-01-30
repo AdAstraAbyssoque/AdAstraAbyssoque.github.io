@@ -82,3 +82,28 @@ function generateNavigation() {
 
 // 页面加载完成后生成导航
 document.addEventListener('DOMContentLoaded', generateNavigation);
+
+// 添加访问统计初始化
+document.addEventListener('DOMContentLoaded', function() {
+    // 检查并显示访问统计
+    setTimeout(() => {
+        const elements = document.querySelectorAll('.visitor-count');
+        elements.forEach(element => {
+            if (element.textContent === '0') {
+                element.textContent = '...';
+            }
+        });
+    }, 1000);
+});
+
+// 添加访问统计加载失败处理
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        const elements = document.querySelectorAll('.visitor-count');
+        elements.forEach(element => {
+            if (element.textContent === '...' || element.textContent === '0') {
+                element.textContent = '-';
+            }
+        });
+    }, 3000);
+});

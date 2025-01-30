@@ -543,15 +543,36 @@
       src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
     ></script>
 
-    <!-- 在底部添加访问统计显示 -->
+    <!-- Modify footer section -->
     <footer class="text-center py-4 mt-4">
       <div class="visitor-stats">
-        <span id="busuanzi_container_site_pv" style="display: none">
-          Total Visits: <span id="busuanzi_value_site_pv"></span>
+        <span>
+          <i class="fas fa-eye visitor-icon"></i>
+          Total Views:
+          <span id="busuanzi_value_site_pv" class="visitor-count">0</span>
         </span>
         <span class="mx-3">|</span>
-        <span id="busuanzi_container_site_uv" style="display: none">
-          Unique Visitors: <span id="busuanzi_value_site_uv"></span>
+        <span>
+          <i class="fas fa-user visitor-icon"></i>
+          Unique Visitors:
+          <span id="busuanzi_value_site_uv" class="visitor-count">0</span>
+        </span>
+        <span class="mx-3">|</span>
+        <span>
+          <i class="fas fa-file-alt visitor-icon"></i>
+          Page Views:
+          <span id="busuanzi_value_page_pv" class="visitor-count">0</span>
+        </span>
+      </div>
+      <div class="copyright-info mt-2">
+        <span>
+          <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Bowen
+          LIU
+        </span>
+        <span class="mx-2">|</span>
+        <span>
+            <i class="fas fa-balance-scale"></i> MIT License
+          </a>
         </span>
       </div>
     </footer>
