@@ -22,6 +22,24 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bowen LIU's personal homepage. Data Science and Analytics student at HKUST(GZ), interested in LLMs and their applications.">
+    <meta name="keywords" content="Bowen LIU, Data Science, HKUST, Machine Learning, LLM, Programming">
+    <meta name="author" content="Bowen LIU">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Bowen LIU - Homepage">
+    <meta property="og:description" content="Data Science and Analytics student at HKUST(GZ), interested in LLMs and their applications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adastraabyssoque.github.io/">
+    <meta property="og:image" content="assets/images/profile.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bowen LIU - Homepage">
+    <meta name="twitter:description" content="Data Science and Analytics student at HKUST(GZ), interested in LLMs and their applications.">
+    <meta name="twitter:image" content="assets/images/profile.png">
   </head>
   <body>
     <!-- 导航栏部分 -->
@@ -481,5 +499,41 @@
         padding: 0.8rem 0;
       }
     </style>
+
+    <!-- 百度统计 -->
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?YOUR_BAIDU_TRACKING_ID";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_GA_TRACKING_ID');
+    </script>
+    
+    <!-- 访问计数器 (使用busuanzi) -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- 在底部添加访问统计显示 -->
+    <footer class="text-center py-4 mt-4">
+      <div class="visitor-stats">
+        <span id="busuanzi_container_site_pv" style="display: none;">
+          Total Visits: <span id="busuanzi_value_site_pv"></span>
+        </span>
+        <span class="mx-3">|</span>
+        <span id="busuanzi_container_site_uv" style="display: none;">
+          Unique Visitors: <span id="busuanzi_value_site_uv"></span>
+        </span>
+      </div>
+    </footer>
   </body>
 </html>
