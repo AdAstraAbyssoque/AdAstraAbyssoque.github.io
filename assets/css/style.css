@@ -311,6 +311,18 @@ nav ul li a {
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
 }
 
+/* SEO优化：视觉隐藏但保持可访问性的样式 */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
 @media (max-width: 992px) {
   .container {
     flex-direction: column;
@@ -488,7 +500,7 @@ nav ul li a {
 }
 
 [data-theme="dark"] .nav-link {
-  color: var(--dark-text) !important;
+  color: var(--dark-text) !重要;
 }
 
 [data-theme="dark"] .sidebar {
