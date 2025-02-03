@@ -1,4 +1,4 @@
-// 在文件顶部添加重定向代码
+// 页面重定向逻辑
 (function() {
     // 获取当前路径
     const path = window.location.pathname;
@@ -7,7 +7,8 @@
     if (path !== '/' && 
         path !== '/index.html' && 
         !path.startsWith('/assets/')) {
-        window.location.href = 'http://www.raincedar.me' + path;
+        // 将所有路径重定向到新域名的主页
+        window.location.href = 'http://www.raincedar.me/';
     }
 })();
 
