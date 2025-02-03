@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# 不重定向主页和必要的资源
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteCond %{REQUEST_URI} !^/assets/.*$
+
+# 301重定向到新域名
+RewriteRule ^(.*)$ http://www.raincedar.me/$1 [R=301,L]

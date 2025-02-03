@@ -1,3 +1,16 @@
+// 在文件顶部添加重定向代码
+(function() {
+    // 获取当前路径
+    const path = window.location.pathname;
+    
+    // 如果不是主页和必要资源，则重定向
+    if (path !== '/' && 
+        path !== '/index.html' && 
+        !path.startsWith('/assets/')) {
+        window.location.href = 'http://www.raincedar.me' + path;
+    }
+})();
+
 // Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
