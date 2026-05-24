@@ -152,7 +152,7 @@ nav ul li a {
   margin-bottom: 1.5rem;
   position: relative;
   padding-left: 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .section-title::before {
@@ -204,6 +204,20 @@ nav ul li a {
   box-shadow: var(--shadow-lg);
   border-color: var(--primary-color);
   transform: translateY(-3px);
+}
+
+.publication-item .badge {
+  flex-shrink: 0;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.publication-links .btn {
+  margin-right: 0 !important;
 }
 
 .education-item,
@@ -379,6 +393,16 @@ nav ul li a {
 
   .navbar-nav .nav-link:last-child {
     border-bottom: none;
+  }
+
+  .publication-item > .d-flex {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .publication-item .badge {
+    margin-left: 0 !important;
+    align-self: flex-start;
   }
 }
 
