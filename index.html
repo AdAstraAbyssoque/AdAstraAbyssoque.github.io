@@ -33,7 +33,7 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Bowen LIU's personal homepage. Data Science and Analytics student at HKUST(GZ), interested in LLMs and their applications."
+      content="Bowen LIU's personal homepage. Data Science and Analytics student at HKUST(GZ). Research on LLM reasoning, agent training, and optimization."
     />
     <meta
       name="keywords"
@@ -74,15 +74,30 @@
     <meta name="indexnow-verification" content="6f60439d7d5c48168e3dd273561fa5f2" />
     <script src="submit-urls.js" defer></script>
     
+    <link rel="canonical" href="https://adastraabyssoque.github.io/" />
+<style>
+.section { scroll-margin-top: 85px; }
+.publication-item { padding: 1.2rem 0; border: 0; border-bottom: 1px solid var(--border-color); border-radius: 0; margin-bottom: .5rem; }
+.publication-item:hover { transform: none; box-shadow: none; border-color: var(--border-color); }
+.publication-item h4 { font-size: 1.05rem; line-height: 1.55; font-weight: 600; }
+.publication-item h4 a { color: var(--text-color); text-decoration: none; }
+.publication-item h4 a:hover { color: var(--primary-color); }
+.publication-authors { font-size: .88rem; line-height: 1.75; margin-bottom: .4rem; }
+.publication-venue { color: var(--primary-color); font-size: .88rem; font-weight: 500; margin-bottom: .6rem; }
+.social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+.social-links a { margin: 0; }
+@media (max-width: 1199.98px) { .navbar-collapse { background: var(--bg-white); border: 1px solid var(--border-color); max-height: calc(100vh - 70px); overflow-y: auto; } }
+@media (max-width: 576px) { .content { padding: .75rem; } .publication-item h4 { font-size: 1rem; } }
+</style>
   </head>
   <body>
     <!-- SEO优化：添加h1标签但视觉隐藏 -->
     <h1 class="visually-hidden">Bowen LIU - Data Science Student at HKUST(GZ)</h1>
     
     <!-- 导航栏部分 -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-xl navbar-light fixed-top">
       <div class="container-fluid px-4">
-        <a class="navbar-brand" href="#">Bowen LIU</a>
+        <a class="navbar-brand" href="#about">Bowen LIU</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -116,9 +131,13 @@
             </p>
 
             <div class="social-links mb-4">
+<a href="https://orcid.org/0009-0000-0771-7336" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID"><i class="fab fa-orcid"></i></a>
+<a href="https://openreview.net/profile?id=~Bowen_LIU12" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer" aria-label="OpenReview" title="OpenReview">OR</a>
+<a href="https://scholar.google.com/citations?user=tV6m9DIAAAAJ&amp;hl=en" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
               <a
                 href="https://github.com/AdAstraAbyssoque"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-outline-primary btn-sm"
               >
                 <i class="fab fa-github"></i>
@@ -126,6 +145,7 @@
               <a
                 href="https://www.raincedar.me/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-outline-primary btn-sm"
               >
                 <i class="fas fa-blog"></i>
@@ -139,6 +159,7 @@
               <!-- <a
                 href="assets/files/CV.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-outline-primary btn-sm"
               >
                 <i class="fas fa-file-alt"></i>
@@ -160,6 +181,7 @@
                 <a
                   href="https://maps.app.goo.gl/MpBwg9f4WbBhXhyB7"
                   target="_blank"
+                rel="noopener noreferrer"
                   class="text-decoration-none"
                 >
                   Guangzhou, China
@@ -173,7 +195,7 @@
           <div id="about" class="section">
             <h3 class="section-title">About Me</h3>
             <p class="lead">
-              My name is Bowen LIU, a 3rd-year undergraduate student at HKUST
+              My name is Bowen LIU, an undergraduate student at HKUST
               (Guangzhou). My research interests include reasoning in large
               language models (LLMs), data-driven LLMs, and their applications
               in combinatorial optimization and planning problems.
@@ -183,6 +205,9 @@
           <div id="news" class="section">
             <h3 class="section-title">News</h3>
             <ul class="list-group list-group-flush">
+<li class="list-group-item">[2026.10] Released <a href="#poseidon">POSEIDON</a> and <a href="#orlicense">OR-License</a>, on scientific-agent training environments and operations research agents.</li>
+<li class="list-group-item">[2026.08] Released <a href="#r3bench">R³-Bench</a>, studying reasoning under shared resource budgets.</li>
+<li class="list-group-item">[2026] <a href="#sslogic">SSLogic</a> at ICML 2026; <a href="#algbench">AlgBench</a> in Findings of ACL 2026.</li>
               <li class="list-group-item">
                 🎉 [2026.05] Received the Tencent Qingyun Internship
               </li>
@@ -201,6 +226,74 @@
               </li> -->
             </ul>
           </div>
+
+          <div id="publications" class="section">
+<h3 class="section-title">Publications</h3>
+<p class="text-muted small"><sup>*</sup> Equal contribution / co-first authorship. <a href="https://scholar.google.com/citations?user=tV6m9DIAAAAJ&amp;hl=en">Google Scholar</a></p>
+<article class="publication-item" id="poseidon">
+<h4><a href="https://arxiv.org/abs/2610.32448">POSEIDON: Scaling Training Environments for Scientific Agents from Code Repositories</a></h4>
+<p class="publication-authors">Qifan Zhang<sup>*</sup>, Yuhan Li, Nuo Chen, <strong>Bowen Liu<sup>*</sup></strong>, Xiao Hu, Miao Peng, Chenyi Zi, Lixin Liu, Lydell Huang, Jing Tang, Jia Li</p>
+<p class="publication-venue">Preprint · 2026</p>
+
+<div class="publication-links"><a href="https://arxiv.org/abs/2610.32448" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a>   </div>
+</article>
+<article class="publication-item" id="orlicense">
+<h4><a href="https://arxiv.org/abs/2610.24087">OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners</a></h4>
+<p class="publication-authors">Peisong Wang<sup>*</sup>, Feixue Liu<sup>*</sup>, Yize Meng<sup>*</sup>, <strong>Bowen Liu<sup>*</sup></strong>, Ruoyu Chen, Gaoyang Dai, Xing He, Aiqian Li, Fengchi Yuan, Aochuan Chen, Chenyi Zi, Yuhan Li, Hongchuan Zeng, Yimo Yan, Nuo Chen, Jie Fu, Zuo-Jun Max Shen, Yong-Hong Kuo, Jia Li</p>
+<p class="publication-venue">Preprint · 2026</p>
+
+<div class="publication-links"><a href="https://arxiv.org/abs/2610.24087" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a>  <a href="https://www.or-license.com/" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Project</a> </div>
+</article>
+<article class="publication-item" id="r3bench">
+<h4><a href="https://arxiv.org/abs/2608.16033">R³-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets</a></h4>
+<p class="publication-authors">Peisong Wang, Zhiwei Ma, <strong>Bowen Liu</strong>, Feixue Liu, Aochuan Chen, Chenyi Zi, Hongchuan Zeng, Yuhan Li, Jia Li</p>
+<p class="publication-venue">Preprint · 2026</p>
+
+<div class="publication-links"><a href="https://arxiv.org/abs/2608.16033" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a>   </div>
+</article>
+<article class="publication-item" id="cpagent">
+<h4><a href="https://arxiv.org/abs/2605.24693">CP-Agent: A Calibrated Risk-Controlled Agent for Feedback-Driven Competitive Programming</a></h4>
+<p class="publication-authors">Peisong Wang<sup>*</sup>, <strong>Bowen Liu<sup>*</sup></strong>, Zehua Li, Yuyao Wang, Zhiwei Ma, Yuhan Li, Jia Li</p>
+<p class="publication-venue">Preprint · 2026</p>
+
+<div class="publication-links"><a href="https://arxiv.org/abs/2605.24693" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a>   </div>
+</article>
+<article class="publication-item" id="sslogic">
+<h4><a href="https://arxiv.org/abs/2602.13218">Scaling the Scaling Logic: Agentic Meta-Synthesis of Logic Reasoning</a></h4>
+<p class="publication-authors"><strong>Bowen Liu</strong>, Zhi Wu, Runquan Xie, Zhanhui Kang, Jia Li</p>
+<p class="publication-venue">ICML 2026</p>
+
+<div class="publication-links"><a href="https://arxiv.org/abs/2602.13218" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a>   <a href="https://github.com/AdAstraAbyssoque/Scaling-the-Scaling-Logic" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Code</a></div>
+</article>
+<article class="publication-item" id="algbench">
+<h4><a href="https://aclanthology.org/2026.findings-acl.1885/">AlgBench: To What Extent Do Large Reasoning Models Understand Algorithms?</a></h4>
+<p class="publication-authors">Henan Sun, Kaichi Yu, Yuyao Wang, <strong>Bowen Liu</strong>, Xunkai Li, Rong-Hua Li, Nuo Chen, Jia Li</p>
+<p class="publication-venue">Findings of ACL 2026</p>
+
+<div class="publication-links"><a href="https://arxiv.org/abs/2601.04996" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a> <a href="https://aclanthology.org/2026.findings-acl.1885/" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Publication</a>  </div>
+</article>
+<article class="publication-item" id="npgmuse">
+<h4><a href="https://arxiv.org/abs/2508.20373">NPG-Muse: Scaling Long Chain-of-Thought Reasoning with NP-Hard Graph Problems</a></h4>
+<p class="publication-authors">Yuyao Wang<sup>*</sup>, <strong>Bowen Liu<sup>*</sup></strong>, Jianheng Tang, Nuo Chen, Yuhan Li, Qifan Zhang, Chenyi Zi, Chen Zhang, Jia Li</p>
+<p class="publication-venue">Preprint · 2025</p>
+<p class="text-muted small">Previously released as Graph-R1.</p>
+<div class="publication-links"><a href="https://arxiv.org/abs/2508.20373" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">arXiv</a>   </div>
+</article>
+<article class="publication-item" id="graphprompts">
+<h4><a href="https://iclr-blogposts.github.io/2025/blog/rethinking-graph-prompts/">Rethinking Graph Prompts: Unraveling the Power of Data Manipulation in Graph Neural Networks</a></h4>
+<p class="publication-authors">Chenyi Zi, <strong>Bowen Liu</strong>, Xiangguo Sun, Hong Cheng, Jia Li</p>
+<p class="publication-venue">ICLR Blogposts 2025</p>
+
+<div class="publication-links"> <a href="https://iclr-blogposts.github.io/2025/blog/rethinking-graph-prompts/" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Blogpost</a>  </div>
+</article>
+</div>
+<div id="models" class="section">
+<h3 class="section-title">Model Projects</h3>
+<p>Model releases I contributed to as part of the Tencent Hunyuan team.</p>
+<article class="publication-item"><h4>Hy4 preview</h4><p class="text-muted">Hunyuan Team · August 2026</p><div class="publication-links"><a href="https://hy.tencent.ai/research/hy4-preview" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Official release</a> <a href="https://github.com/Tencent-Hunyuan/Hy4-preview" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Model repository</a></div></article>
+<article class="publication-item"><h4>Hy3</h4><p class="text-muted">Hunyuan Team · July 2026</p><div class="publication-links"><a href="https://hy.tencent.com/research/hy3" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Official release</a> <a href="https://github.com/Tencent-Hunyuan/Hy3" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Model repository</a></div></article>
+<article class="publication-item"><h4>Hy3 preview</h4><p class="text-muted">Hunyuan Team · April 2026</p><div class="publication-links"><a href="https://hy.tencent.com/research/hy3-preview" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Official release</a> <a href="https://github.com/Tencent-Hunyuan/Hy3-preview" class="btn btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer">Model repository</a></div></article>
+</div>
 
           <!-- <div id="research" class="section">
             <h3 class="section-title">Research</h3>
@@ -262,6 +355,7 @@
               <a
                 href="http://raincedar.me/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="text-decoration-none"
               >
                 RainCedar's Blog <i class="fas fa-external-link-alt"></i>
