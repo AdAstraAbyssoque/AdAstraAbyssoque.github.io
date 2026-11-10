@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" data-sprite="assets/icons.svg" data-fruit="lychee">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Astra Island · Bowen LIU</title>
+<meta name="description" content="Welcome to Astra Island — Bowen LIU's homepage, island edition.">
+<meta property="og:title" content="Astra Island · Bowen LIU">
+<meta property="og:description" content="Welcome to Astra Island — Bowen LIU's homepage, island edition.">
+<meta property="og:image" content="https://adastraabyssoque.github.io/isle-fa3dd9/assets/bowen.png">
+<meta name="theme-color" content="#36bea6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6c14 6 24 18 24 31 0 12-10 21-24 21S8 49 8 37C8 24 18 12 32 6z' fill='%237bc95a'/%3E%3Cpath d='M32 15v40' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/acnh.css">
+<script>
+(function (d) {
+  var n = new Date(), m = n.getMonth(), h = n.getHours(), t = "auto";
+  try { t = JSON.parse(localStorage.getItem("isle-tod")) || "auto"; } catch (e) {}
+  d.className += " js";
+  d.setAttribute("data-season", m === 11 || m <= 1 ? "winter" : m <= 4 ? "spring" : m <= 7 ? "summer" : "autumn");
+  d.setAttribute("data-tod", /^(morning|day|evening|night)$/.test(t) ? t : h >= 5 && h < 9 ? "morning" : h >= 9 && h < 17 ? "day" : h >= 17 && h < 19 ? "evening" : "night");
+  setTimeout(function () { if (!window.ISLE) d.className = d.className.replace(" js", ""); }, 3000);
+})(document.documentElement);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="art-leaf" viewBox="0 0 64 64">
+      <path d="M32 5c15 6 25 19 25 32 0 12-11 21-25 21S7 49 7 37C7 24 17 11 32 5z" fill="#7bc95a"/>
+      <path d="M32 5c15 6 25 19 25 32 0 12-11 21-25 21z" fill="#62b548"/>
+      <path d="M32 14v43" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M32 29l-9-7M32 39l10-8M32 48l-8-6" stroke="#fff" stroke-width="2.6" stroke-linecap="round" opacity=".75"/>
+    </symbol>
+    <symbol id="art-cloud" viewBox="0 -16 200 106">
+      <path d="M38 80c-20 0-32-12-30-27 2-14 15-22 29-20 4-18 22-30 41-26 9-14 28-20 45-12 14 6 22 19 22 32 18-4 36 8 38 26 2 16-10 27-28 27z" fill="#fff"/>
+      <ellipse cx="98" cy="77" rx="76" ry="5" fill="#e0eff9"/>
+    </symbol>
+    <symbol id="art-tree" viewBox="0 0 200 250">
+      <ellipse cx="100" cy="240" rx="64" ry="9" fill="#1e320a" opacity=".2"/>
+      <path d="M86 150c3 32-1 60-12 90h52c-11-30-15-58-12-90z" fill="#a9733f"/>
+      <path d="M104 150c-1 32 4 60 12 90h10c-11-30-15-58-12-90z" fill="#8a5a30"/>
+      <g style="fill:var(--canopy-lo-now)">
+        <circle cx="100" cy="86" r="64"/><circle cx="52" cy="118" r="44"/><circle cx="148" cy="118" r="44"/><circle cx="100" cy="138" r="48"/>
+      </g>
+      <g style="fill:var(--canopy-now)">
+        <circle cx="100" cy="78" r="62"/><circle cx="53" cy="108" r="42"/><circle cx="147" cy="108" r="42"/><circle cx="100" cy="126" r="46"/>
+      </g>
+      <ellipse cx="74" cy="52" rx="30" ry="17" transform="rotate(-24 74 52)" style="fill:var(--canopy-hi-now)" opacity=".85"/>
+      <circle cx="124" cy="40" r="9" style="fill:var(--canopy-hi-now)" opacity=".75"/>
+      <circle cx="34" cy="100" r="7" style="fill:var(--canopy-hi-now)" opacity=".6"/>
+      <g style="fill:var(--fruit)"><circle cx="64" cy="112" r="11"/><circle cx="126" cy="92" r="11"/><circle cx="146" cy="134" r="11"/></g>
+      <g fill="#fff" opacity=".7"><circle cx="60" cy="108" r="3.4"/><circle cx="122" cy="88" r="3.4"/><circle cx="142" cy="130" r="3.4"/></g>
+    </symbol>
+    <symbol id="art-palm" viewBox="0 0 240 300">
+      <ellipse cx="108" cy="292" rx="46" ry="7" fill="#3c2a0a" opacity=".18"/>
+      <path d="M94 292c4-70 16-134 38-196h18c-18 64-28 128-30 196z" fill="#cc9d5e"/>
+      <path d="M97 262q12 5 24 0M100 226q12 5 25 0M106 191q11 5 23 0M113 158q11 5 22 0M122 126q10 4 20 0" fill="none" stroke="#a87b43" stroke-width="4.5" stroke-linecap="round"/>
+      <g fill="#5cb34b">
+        <path d="M140 96C110 70 60 70 20 100c40-14 80-10 120 4z"/>
+        <path d="M140 96c30-30 74-26 96 4-36-12-66-8-96 6z"/>
+        <path d="M140 94C124 54 90 30 52 26c34 18 58 40 82 74z"/>
+        <path d="M142 94c18-42 54-60 88-54-34 14-58 32-82 60z"/>
+        <path d="M136 100c-24 12-44 38-50 72 18-28 36-46 56-64z"/>
+        <path d="M144 100c28 12 46 38 48 70-16-28-32-44-52-62z"/>
+      </g>
+      <g fill="none" stroke="#449838" stroke-width="3" stroke-linecap="round">
+        <path d="M138 99C104 80 64 82 26 99"/><path d="M142 99c30-20 64-18 90 0"/><path d="M137 96C122 62 92 40 58 30"/><path d="M144 96c18-34 50-50 82-52"/>
+      </g>
+      <circle cx="132" cy="104" r="8.5" fill="#8a5a30"/><circle cx="148" cy="106" r="8.5" fill="#76492a"/><circle cx="140" cy="115" r="7.5" fill="#8a5a30"/>
+    </symbol>
+    <symbol id="art-fruit" viewBox="0 0 40 40">
+      <path d="M20 9c8 0 14 6.5 14 14.5S28 37 20 37 6 31.5 6 23.5 12 9 20 9z" fill="#e2475a"/>
+      <g fill="#a92a40" opacity=".55">
+        <circle cx="14" cy="19" r="1.5"/><circle cx="20" cy="16" r="1.5"/><circle cx="26" cy="19" r="1.5"/><circle cx="11" cy="25" r="1.5"/><circle cx="17" cy="23" r="1.5"/><circle cx="23" cy="23" r="1.5"/><circle cx="29" cy="25" r="1.5"/><circle cx="14" cy="30" r="1.5"/><circle cx="20" cy="28" r="1.5"/><circle cx="26" cy="30" r="1.5"/><circle cx="17" cy="34" r="1.5"/><circle cx="23" cy="34" r="1.5"/>
+      </g>
+      <path d="M20 9c0-3 1-5 3-6" stroke="#6b8f2a" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <path d="M22.5 5c4-3 9-2 11 1-4 2.2-8 2.2-11-1z" fill="#78b543"/>
+      <ellipse cx="13.5" cy="18" rx="2.6" ry="4.4" fill="#fff" opacity=".38" transform="rotate(25 13.5 18)"/>
+    </symbol>
+    <symbol id="art-bellbag" viewBox="0 0 40 40">
+      <path d="M14 10c-2-3-1-6 2-6 2 0 3 2 4 3 1-1 2-3 4-3 3 0 4 3 2 6z" fill="#e7c587"/>
+      <path d="M13 11h14c7 5 10 11 10 16 0 7-7 10-17 10S3 34 3 27c0-5 3-11 10-16z" fill="#f4dda8"/>
+      <path d="M27 11c7 5 10 11 10 16 0 7-7 10-17 10 8-2 13-6 13-12 0-5-2-10-6-14z" fill="#e8c98a"/>
+      <rect x="12" y="9" width="16" height="4" rx="2" fill="#c38f4b"/>
+      <path d="M20 17c-3.6 0-5.5 2.6-5.5 5.6v3.2l-1.6 2.2h14.2l-1.6-2.2v-3.2c0-3-1.9-5.6-5.5-5.6z" fill="#f2b62f"/>
+      <circle cx="20" cy="30.2" r="1.8" fill="#f2b62f"/>
+    </symbol>
+    <symbol id="art-flower" viewBox="0 0 60 60">
+      <path d="M30 58V32" stroke="#4f9d3a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M30 47c-8-6-16-4-18 0 6 4 12 4 18 0zM30 51c8-6 16-4 18 0-6 4-12 4-18 0z" fill="#5fb246"/>
+      <g style="fill:var(--petal, #fff)"><circle cx="30" cy="12" r="8"/><circle cx="41" cy="20" r="8"/><circle cx="37" cy="33" r="8"/><circle cx="23" cy="33" r="8"/><circle cx="19" cy="20" r="8"/></g>
+      <circle cx="30" cy="23" r="6" fill="#f8d052"/>
+    </symbol>
+    <symbol id="art-miles" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18" fill="#36bea6"/>
+      <circle cx="20" cy="20" r="13.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-dasharray="3 3"/>
+      <path d="M20 10c6 3 9 8 9 12.5 0 4.5-4 8-9 8s-9-3.5-9-8C11 18 14 13 20 10z" fill="#fff"/>
+      <path d="M20 14v16" stroke="#36bea6" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="particles" aria-hidden="true"></div>
+
+<!-- ======================= ISLAND ======================= -->
+<header class="hero" id="top">
+  <div class="sky" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="sun"></div>
+    <div class="cloud c1"><svg viewBox="0 -16 200 106"><use href="#art-cloud"/></svg></div>
+    <div class="cloud c2"><svg viewBox="0 -16 200 106"><use href="#art-cloud"/></svg></div>
+    <div class="cloud c3"><svg viewBox="0 -16 200 106"><use href="#art-cloud"/></svg></div>
+  </div>
+  <svg class="sea" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:var(--sea-1)"/>
+        <stop offset="1" style="stop-color:var(--sea-2)"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="300" fill="url(#seaGrad)"/>
+    <rect width="1440" height="4" fill="#fff" opacity=".5"/>
+    <g class="waves" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".5">
+      <path vector-effect="non-scaling-stroke" d="M90 40q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M380 70q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M640 30q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M900 80q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M1180 46q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M240 130q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M1040 150q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M520 170q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M1320 120q15-8 30 0t30 0"/>
+    </g>
+  </svg>
+  <svg class="beach" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 40C200 14 380 58 600 38S980 12 1180 34s200 10 260-4V150C1240 176 1000 130 760 152S280 128 0 160z" style="fill:var(--wet-now)"/>
+    <path d="M0 54C200 28 380 72 600 52S980 26 1180 48s200 10 260-4V150C1240 176 1000 130 760 152S280 128 0 160z" style="fill:var(--sand-now)"/>
+    <path class="foam" vector-effect="non-scaling-stroke" d="M0 40C200 14 380 58 600 38S980 12 1180 34s200 10 260-4" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+    <path vector-effect="non-scaling-stroke" d="M0 160C280 128 520 174 760 152S1240 176 1440 150" fill="none" style="stroke:var(--rim-now)" stroke-width="12"/>
+  </svg>
+
+  <button class="tree" type="button" data-drop="bells" style="left:1%;bottom:21%;width:150px" aria-label="Shake the palm tree"><svg viewBox="0 0 240 300"><use href="#art-palm"/></svg></button>
+  <button class="tree" type="button" data-drop="fruit" style="left:5%;bottom:3%;width:196px" aria-label="Shake the lychee tree"><svg viewBox="0 0 200 250"><use href="#art-tree"/></svg></button>
+  <button class="tree" type="button" data-drop="bells" style="right:1%;bottom:24%;width:128px" aria-label="Shake the palm tree"><svg viewBox="0 0 240 300"><use href="#art-palm"/></svg></button>
+  <button class="tree" type="button" data-drop="fruit" style="right:5%;bottom:6%;width:172px" aria-label="Shake the lychee tree"><svg viewBox="0 0 200 250"><use href="#art-tree"/></svg></button>
+
+  <div class="hero-inner">
+    <h1 class="logo">
+      <span class="logo-top">Welcome to</span>
+      <span class="logo-main" data-split><svg class="logo-leaf" viewBox="0 0 64 64" aria-hidden="true"><use href="#art-leaf"/></svg>Astra Island</span>
+      <span class="ribbon-wrap"><span class="ribbon">Bowen LIU · Homepage</span></span>
+    </h1>
+
+    <button class="villager" type="button" aria-label="Talk to Bowen"
+      data-poke="Hm? Did you need something? Feel free to look around~|Oh! You startled me... I was deep in a chain of thought.|Psst — try shaking the trees. I hear they drop Bells sometimes~">
+      <img src="assets/bunny.png" alt="" width="360" height="483">
+      <span class="emote" aria-hidden="true">!</span>
+    </button>
+
+    <div class="talk">
+      <ol class="lines sr-only">
+        <li>Oh, hi there! Welcome to Astra Island~ I'm Bowen, one of the residents here.</li>
+        <li>I'm an undergrad studying Data Science and Analytics at HKUST (Guangzhou).</li>
+        <li>These days I research reasoning in large language models, data-driven LLMs, and how they tackle combinatorial optimization and planning.</li>
+        <li>Feel free to look around! If you get lost, the NookPhone in the corner knows the way.</li>
+      </ol>
+      <div class="choices" hidden>
+        <a class="choice" href="#passport"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>Show me around!</a>
+        <a class="choice" href="#news"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>What's new on the island?</a>
+        <a class="choice" href="#recipes"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>Show me your recipes!</a>
+        <button class="choice" type="button" data-reply="Okay! Take care, and drop by again sometime~"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>Bye for now</button>
+      </div>
+      <div class="bubble" role="button" tabindex="0" aria-label="Next line">
+        <span class="nametag">Bowen</span>
+        <span class="say" aria-hidden="true"><span class="ghost"></span><span class="typed"></span></span>
+        <span class="next" aria-hidden="true"></span>
+      </div>
+      <button class="sound-btn" type="button" data-action="sound" aria-pressed="false" aria-label="Villager voices"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-volume-xmark"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <span class="deco" style="left:2%;top:260px;--petal:#fff" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="left:5%;top:300px;width:52px;--petal:#f7b6c8" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="right:3%;top:1180px;--petal:#f8d052" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="right:6%;top:1220px;width:50px;--petal:#fff" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="left:3%;top:2600px;--petal:#ee6e5c" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="right:4%;top:3900px;--petal:#ac94ea" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="left:4%;top:5200px;--petal:#fff" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+
+  <!-- ======================= PASSPORT ======================= -->
+  <section class="sec" id="passport" aria-labelledby="passport-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-id-card"/></svg></span>
+      <div><p class="eyebrow">About me</p><h2 id="passport-h">Passport</h2></div>
+    </div>
+    <article class="passport panel pop">
+      <div class="pp-band"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-leaf"/></svg>PASSPORT</span><span>ASTRA ISLAND</span></div>
+      <div class="pp-body">
+        <figure class="pp-photo">
+          <img src="assets/bunny.png" alt="Bowen's avatar: a bunny in a yellow striped scarf" width="360" height="483">
+          <figcaption>RESIDENT PHOTO</figcaption>
+        </figure>
+        <div class="pp-info">
+          <p class="pp-title"><span>LLM Reasoning</span><span>Explorer</span></p>
+          <h3 class="pp-name">Bowen LIU<small>Undergraduate Student</small></h3>
+          <dl class="pp-fields">
+            <div class="wide"><dt>Island</dt><dd><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-graduation-cap"/></svg>The Hong Kong University of Science and Technology (Guangzhou)</dd></div>
+            <div><dt>Major</dt><dd>Data Science and Analytics</dd></div>
+            <div><dt>Degree</dt><dd>BSc · 2023 – Present</dd></div>
+            <div><dt>Native fruit</dt><dd><svg class="fruit" viewBox="0 0 40 40" aria-hidden="true"><use href="#art-fruit"/></svg>Lychee</dd></div>
+            <div><dt>Location</dt><dd><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg><a href="https://maps.app.goo.gl/MpBwg9f4WbBhXhyB7" target="_blank" rel="noopener noreferrer">Guangzhou, China</a></dd></div>
+            <div class="wide"><dt>Mail</dt><dd><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-envelope"/></svg><a href="mailto:bliu690@connect.hkust-gz.edu.cn">bliu690@connect.hkust-gz.edu.cn</a></dd></div>
+          </dl>
+        </div>
+        <div class="pp-stamp" aria-hidden="true"><span>RESIDENT<b>2023</b>ASTRA ISLE</span></div>
+      </div>
+      <p class="pp-comment">My name is Bowen LIU, an undergraduate student at HKUST (Guangzhou). My research interests include <b>reasoning in large language models (LLMs)</b>, <b>data-driven LLMs</b>, and their applications in <b>combinatorial optimization and planning problems</b>.</p>
+      <div class="pp-friends">
+        <span class="label">Friend codes</span>
+        <a class="friend" href="https://scholar.google.com/citations?user=tV6m9DIAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-google-scholar"/></svg></a>
+        <a class="friend" href="https://github.com/AdAstraAbyssoque" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-github"/></svg></a>
+        <a class="friend" href="https://orcid.org/0009-0000-0771-7336" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-orcid"/></svg></a>
+        <a class="friend" href="https://openreview.net/profile?id=~Bowen_LIU12" target="_blank" rel="noopener noreferrer" aria-label="OpenReview" title="OpenReview">OR</a>
+        <a class="friend" href="https://www.researchgate.net/profile/Bowen-Liu-104" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate" title="ResearchGate"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-researchgate"/></svg></a>
+        <a class="friend" href="https://aclanthology.org/people/bowen-liu/" target="_blank" rel="noopener noreferrer" aria-label="ACL Anthology" title="ACL Anthology">ACL</a>
+        <a class="friend" href="https://www.linkedin.com/in/bowen-liu-7195172ba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-linkedin-in"/></svg></a>
+        <a class="friend" href="https://www.raincedar.me/" target="_blank" rel="noopener noreferrer" aria-label="Blog" title="RainCedar's Blog"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-pen-nib"/></svg></a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ======================= BULLETIN BOARD ======================= -->
+  <section class="sec" id="news" aria-labelledby="news-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--orange)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-bullhorn"/></svg></span>
+      <div><p class="eyebrow">News</p><h2 id="news-h">Bulletin Board</h2></div>
+    </div>
+    <div class="board pop">
+      <p class="board-title">Island Notices</p>
+      <div class="board-inner" data-stagger>
+        <article class="note pop" style="--r:-2deg"><time>2026.11</time><p><a href="#cpagent">CP-Agent</a> has been accepted to Findings of WSDM.</p></article>
+        <article class="note pop" style="--r:1.5deg;--note:#e1f5ec;--pin:var(--blue)"><time>2026.10</time><p>Released <a href="#poseidon">POSEIDON</a> and <a href="#orlicense">OR-License</a>, on scientific-agent training environments and operations research agents.</p></article>
+        <article class="note pop" style="--r:-1deg;--note:#ffe6ec;--pin:var(--teal)"><time>2026.08</time><p>Released <a href="#r3bench">R³-Bench</a>, studying reasoning under shared resource budgets.</p></article>
+        <article class="note pop" style="--r:2deg;--note:#e7efff;--pin:var(--yellow-d)"><time>2026</time><p><a href="#sslogic">SSLogic</a> at ICML 2026; <a href="#algbench">AlgBench</a> in Findings of ACL 2026.</p></article>
+        <article class="note pop" style="--r:-1.5deg;--note:#fff3c8"><time>2026.05</time><p><span class="emo" aria-hidden="true">🎉</span>Received the Tencent Qingyun Internship.</p></article>
+        <article class="note pop" style="--r:1deg;--note:#ffe6ec;--pin:var(--blue)"><time>2026</time><p><span class="emo" aria-hidden="true">🏆</span>Received the Lychee Innovation Talent Scholarship (荔枝创新人才奖学金).</p></article>
+        <article class="note pop" style="--r:-2deg;--note:#e1f5ec;--pin:var(--pink-d)"><time>2025.10</time><p><span class="emo" aria-hidden="true">💼</span>Joined Hunyuan, Tencent as an Intern.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= DIY RECIPES ======================= -->
+  <section class="sec" id="recipes" aria-labelledby="recipes-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:#c48a4f"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg></span>
+      <div><p class="eyebrow">Publications</p><h2 id="recipes-h">DIY Recipes</h2></div>
+    </div>
+    <p class="sec-note"><sup>*</sup> Equal contribution / co-first authorship · <a href="https://scholar.google.com/citations?user=tV6m9DIAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
+    <div class="tabs" role="tablist" aria-label="Filter recipes" data-filter-target="#recipe-list">
+      <button class="tab" type="button" role="tab" aria-selected="true" data-filter="all">All <span class="n">8</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="first">★ First / co-first <span class="n">5</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="pub">Published <span class="n">4</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="pre">Preprints <span class="n">4</span></button>
+    </div>
+    <div class="recipes" id="recipe-list" data-stagger>
+      <article class="recipe pop" id="poseidon" data-tags="first pre">
+        <span class="first-badge">★ co-first</span>
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pre">Preprint · 2026</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">🔱</span>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2610.32448" target="_blank" rel="noopener noreferrer">POSEIDON: Scaling Training Environments for Scientific Agents from Code Repositories</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Qifan Zhang<sup>*</sup>, Yuhan Li, Nuo Chen, <strong>Bowen Liu<sup>*</sup></strong>, Xiao Hu, Miao Peng, Chenyi Zi, Lixin Liu, Lydell Huang, Jing Tang, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links"><a class="btn btn-sm" href="https://arxiv.org/abs/2610.32448" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a></div>
+      </article>
+
+      <article class="recipe pop" id="orlicense" data-tags="first pre">
+        <span class="first-badge">★ co-first</span>
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pre">Preprint · 2026</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">📜</span>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2610.24087" target="_blank" rel="noopener noreferrer">OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Peisong Wang<sup>*</sup>, Feixue Liu<sup>*</sup>, Yize Meng<sup>*</sup>, <strong>Bowen Liu<sup>*</sup></strong>, Ruoyu Chen, Gaoyang Dai, Xing He, Aiqian Li, Fengchi Yuan, Aochuan Chen, Chenyi Zi, Yuhan Li, Hongchuan Zeng, Yimo Yan, Nuo Chen, Jie Fu, Zuo-Jun Max Shen, Yong-Hong Kuo, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links">
+          <a class="btn btn-sm" href="https://arxiv.org/abs/2610.24087" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a>
+          <a class="btn btn-sm btn-teal" href="https://www.or-license.com/" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg>Project</a>
+        </div>
+      </article>
+
+      <article class="recipe pop" id="r3bench" data-tags="pre">
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pre">Preprint · 2026</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">⚖️</span>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2608.16033" target="_blank" rel="noopener noreferrer">R³-Bench: LLMs Struggle with Resource-Rational Reasoning under Shared Budgets</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Peisong Wang, Zhiwei Ma, <strong>Bowen Liu</strong>, Feixue Liu, Aochuan Chen, Chenyi Zi, Hongchuan Zeng, Yuhan Li, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links"><a class="btn btn-sm" href="https://arxiv.org/abs/2608.16033" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a></div>
+      </article>
+
+      <article class="recipe pop" id="cpagent" data-tags="first pub">
+        <span class="first-badge">★ co-first</span>
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pub">Findings of WSDM · Accepted</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">🎯</span>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2605.24693" target="_blank" rel="noopener noreferrer">CP-Agent: A Calibrated Risk-Controlled Agent for Feedback-Driven Competitive Programming</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Peisong Wang<sup>*</sup>, <strong>Bowen Liu<sup>*</sup></strong>, Zehua Li, Yuyao Wang, Zhiwei Ma, Yuhan Li, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links"><a class="btn btn-sm" href="https://arxiv.org/abs/2605.24693" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a></div>
+      </article>
+
+      <article class="recipe pop" id="sslogic" data-tags="first pub">
+        <span class="first-badge">★ first author</span>
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pub">ICML 2026</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">🧩</span>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2602.13218" target="_blank" rel="noopener noreferrer">Scaling the Scaling Logic: Agentic Meta-Synthesis of Logic Reasoning</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors"><strong>Bowen Liu</strong>, Zhi Wu, Runquan Xie, Zhanhui Kang, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links">
+          <a class="btn btn-sm" href="https://arxiv.org/abs/2602.13218" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a>
+          <a class="btn btn-sm btn-teal" href="https://github.com/AdAstraAbyssoque/Scaling-the-Scaling-Logic" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-code"/></svg>Code</a>
+        </div>
+      </article>
+
+      <article class="recipe pop" id="algbench" data-tags="pub">
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pub">Findings of ACL 2026</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">🧮</span>
+          <div>
+            <h3><a href="https://aclanthology.org/2026.findings-acl.1885/" target="_blank" rel="noopener noreferrer">AlgBench: To What Extent Do Large Reasoning Models Understand Algorithms?</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Henan Sun, Kaichi Yu, Yuyao Wang, <strong>Bowen Liu</strong>, Xunkai Li, Rong-Hua Li, Nuo Chen, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links">
+          <a class="btn btn-sm" href="https://arxiv.org/abs/2601.04996" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a>
+          <a class="btn btn-sm btn-teal" href="https://aclanthology.org/2026.findings-acl.1885/" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-book-open"/></svg>Publication</a>
+        </div>
+      </article>
+
+      <article class="recipe pop" id="npgmuse" data-tags="first pre">
+        <span class="first-badge">★ co-first</span>
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pre">Preprint · 2025</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">🕸️</span>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2508.20373" target="_blank" rel="noopener noreferrer">NPG-Muse: Scaling Long Chain-of-Thought Reasoning with NP-Hard Graph Problems</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Yuyao Wang<sup>*</sup>, <strong>Bowen Liu<sup>*</sup></strong>, Jianheng Tang, Nuo Chen, Yuhan Li, Qifan Zhang, Chenyi Zi, Chen Zhang, Jia Li</p>
+            <p class="aside">Previously released as Graph-R1.</p>
+          </div>
+        </div>
+        <div class="recipe-links"><a class="btn btn-sm" href="https://arxiv.org/abs/2508.20373" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-file-lines"/></svg>arXiv</a></div>
+      </article>
+
+      <article class="recipe pop" id="graphprompts" data-tags="pub">
+        <div class="recipe-top"><span class="recipe-kind"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg>DIY Recipe</span><span class="venue pub">ICLR Blogposts 2025</span></div>
+        <div class="recipe-main">
+          <span class="recipe-item" aria-hidden="true">💬</span>
+          <div>
+            <h3><a href="https://iclr-blogposts.github.io/2025/blog/rethinking-graph-prompts/" target="_blank" rel="noopener noreferrer">Rethinking Graph Prompts: Unraveling the Power of Data Manipulation in Graph Neural Networks</a></h3>
+            <span class="mat">Crafted with</span>
+            <p class="authors">Chenyi Zi, <strong>Bowen Liu</strong>, Xiangguo Sun, Hong Cheng, Jia Li</p>
+          </div>
+        </div>
+        <div class="recipe-links"><a class="btn btn-sm btn-teal" href="https://iclr-blogposts.github.io/2025/blog/rethinking-graph-prompts/" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-pen-nib"/></svg>Blogpost</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= DODO AIRLINES ======================= -->
+  <section class="sec" id="flights" aria-labelledby="flights-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--blue-d)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane"/></svg></span>
+      <div><p class="eyebrow">Model Projects</p><h2 id="flights-h">Dodo Airlines</h2></div>
+    </div>
+    <p class="sec-note">Model releases I contributed to as part of the Tencent Hunyuan team.</p>
+    <div class="tickets" data-stagger>
+      <article class="ticket pop">
+        <div class="ticket-main">
+          <div class="ticket-head"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane-departure"/></svg>Dodo Airlines<span class="bp">Boarding pass</span></div>
+          <h3 class="ticket-flight">Hy4 preview</h3>
+          <div class="ticket-route"><span>Astra</span><span class="line"></span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane"/></svg><span class="line"></span><span>Hunyuan</span></div>
+          <dl class="ticket-meta"><div><dt>Crew</dt><dd>Hunyuan Team</dd></div><div><dt>Departure</dt><dd>August 2026</dd></div></dl>
+        </div>
+        <div class="ticket-stub">
+          <a class="btn btn-sm btn-blue" href="https://hy.tencent.ai/research/hy4-preview" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg>Official release</a>
+          <a class="btn btn-sm btn-ghost" href="https://github.com/Tencent-Hunyuan/Hy4-preview" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-github"/></svg>Model repository</a>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+      </article>
+      <article class="ticket pop">
+        <div class="ticket-main">
+          <div class="ticket-head"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane-departure"/></svg>Dodo Airlines<span class="bp">Boarding pass</span></div>
+          <h3 class="ticket-flight">Hy3</h3>
+          <div class="ticket-route"><span>Astra</span><span class="line"></span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane"/></svg><span class="line"></span><span>Hunyuan</span></div>
+          <dl class="ticket-meta"><div><dt>Crew</dt><dd>Hunyuan Team</dd></div><div><dt>Departure</dt><dd>July 2026</dd></div></dl>
+        </div>
+        <div class="ticket-stub">
+          <a class="btn btn-sm btn-blue" href="https://hy.tencent.com/research/hy3" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg>Official release</a>
+          <a class="btn btn-sm btn-ghost" href="https://github.com/Tencent-Hunyuan/Hy3" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-github"/></svg>Model repository</a>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+      </article>
+      <article class="ticket pop">
+        <div class="ticket-main">
+          <div class="ticket-head"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane-departure"/></svg>Dodo Airlines<span class="bp">Boarding pass</span></div>
+          <h3 class="ticket-flight">Hy3 preview</h3>
+          <div class="ticket-route"><span>Astra</span><span class="line"></span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane"/></svg><span class="line"></span><span>Hunyuan</span></div>
+          <dl class="ticket-meta"><div><dt>Crew</dt><dd>Hunyuan Team</dd></div><div><dt>Departure</dt><dd>April 2026</dd></div></dl>
+        </div>
+        <div class="ticket-stub">
+          <a class="btn btn-sm btn-blue" href="https://hy.tencent.com/research/hy3-preview" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-globe"/></svg>Official release</a>
+          <a class="btn btn-sm btn-ghost" href="https://github.com/Tencent-Hunyuan/Hy3-preview" target="_blank" rel="noopener noreferrer"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-github"/></svg>Model repository</a>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= POCKETS ======================= -->
+  <section class="sec" id="pockets" aria-labelledby="pockets-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--yellow-d)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-bag-shopping"/></svg></span>
+      <div><p class="eyebrow">Technical Skills</p><h2 id="pockets-h">Pockets</h2></div>
+    </div>
+    <div class="pockets pop">
+      <div class="pocket-label" aria-live="polite"><span class="hint">Point at an item to check it~</span></div>
+      <div class="pocket-grid">
+        <button class="slot" type="button" style="--c:#42b883" data-name="Vue" aria-label="Vue"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-vuejs"/></svg></button>
+        <button class="slot" type="button" data-name="Vite" aria-label="Vite"><svg viewBox="0 0 24 24" width="56%" aria-hidden="true"><path d="M2.5 4.2 12 21l9.5-16.8L12 6z" fill="#8f7cf7"/><path d="M13.6 2.6 8.4 3.7l-.4 7.4 2.3-.5-.7 6.2 4.9-8.8-2.5.5z" fill="#ffc517"/></svg></button>
+        <button class="slot" type="button" style="--c:#ee4c2c" data-name="PyTorch" aria-label="PyTorch"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-fire-flame-curved"/></svg></button>
+        <button class="slot" type="button" style="--c:#00599c" data-name="C++" aria-label="C++"><span class="txt">C++</span></button>
+        <button class="slot" type="button" style="--c:#e76f00" data-name="Java" aria-label="Java"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-java"/></svg></button>
+        <button class="slot" type="button" style="--c:#76b900" data-name="CUDA" aria-label="CUDA"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-microchip"/></svg></button>
+        <button class="slot" type="button" style="--c:#8f6a43" data-name="Bug Net — great for debugging" aria-label="Bug net"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-bug"/></svg></button>
+        <button class="slot" type="button" style="--c:var(--blue-d)" data-name="Fishing Rod — for catching ideas" aria-label="Fishing rod"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-fish"/></svg></button>
+        <button class="slot" type="button" style="--c:#58a240" data-name="Watering Can — for growing models" aria-label="Watering can"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-seedling"/></svg></button>
+        <button class="slot" type="button" style="--c:var(--wood)" data-name="Shovel — for digging into data" aria-label="Shovel"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-trowel"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= NOOK MILES ======================= -->
+  <section class="sec" id="miles" aria-labelledby="miles-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:#62b548"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-medal"/></svg></span>
+      <div><p class="eyebrow">Honors &amp; Awards</p><h2 id="miles-h">Nook Miles</h2></div>
+    </div>
+    <p class="miles-total pop"><span class="coin"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#art-miles"/></svg></span>Miles earned <b data-count="19500">19,500</b></p>
+
+    <h3 class="miles-cat"><span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-award"/></svg></span>Scholarships</h3>
+    <div class="miles-grid" data-stagger>
+      <article class="mile pop">
+        <span class="stamp gold"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-award"/></svg></span>
+        <div><h4>Lychee Innovation Talent Scholarship</h4><p class="event">荔枝创新人才奖学金</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2026</span></p></div>
+        <span class="mile-pts">+3,000</span>
+      </article>
+    </div>
+
+    <h3 class="miles-cat"><span class="app-ico" style="--c:var(--blue-d)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-code"/></svg></span>Programming Competitions</h3>
+    <div class="miles-grid" data-stagger>
+      <article class="mile pop">
+        <span class="stamp silver"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-server"/></svg></span>
+        <div><h4>Second Prize (rank 11)</h4><p class="event">ASC Student Supercomputer Challenge</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Online</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2025.02</span></p></div>
+        <span class="mile-pts">+2,000</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp bronze"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-medal"/></svg></span>
+        <div><h4>Bronze Medal</h4><p class="event">The ICPC Asia Kunming Regional Contest</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Kunming</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.12</span></p></div>
+        <span class="mile-pts">+1,500</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp bronze"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-medal"/></svg></span>
+        <div><h4>Bronze Medal</h4><p class="event">The 10th CCPC</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Zhengzhou</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.11</span></p></div>
+        <span class="mile-pts">+1,500</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp pink"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-star"/></svg></span>
+        <div><h4>Honorable Mention</h4><p class="event">The ICPC Asia Nanjing Regional Contest</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Nanjing</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.11</span></p></div>
+        <span class="mile-pts">+1,000</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp blue"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-ranking-star"/></svg></span>
+        <div><h4>Rank 18</h4><p class="event">ACM-HK Programming Contest</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Hong Kong</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.07</span></p></div>
+        <span class="mile-pts">+1,000</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp bronze"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-medal"/></svg></span>
+        <div><h4>Bronze Medal</h4><p class="event">CCPC National Invitational Contest</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Zhengzhou</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.07</span></p></div>
+        <span class="mile-pts">+1,500</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp silver"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-server"/></svg></span>
+        <div><h4>Second Prize</h4><p class="event">ASC Student Supercomputer Challenge</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Online</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.02</span></p></div>
+        <span class="mile-pts">+2,000</span>
+      </article>
+    </div>
+
+    <h3 class="miles-cat"><span class="app-ico" style="--c:var(--pink-d)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-flask"/></svg></span>Scientific Competitions</h3>
+    <div class="miles-grid" data-stagger>
+      <article class="mile pop">
+        <span class="stamp gold"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-dna"/></svg></span>
+        <div><h4>Gold Award</h4><p class="event">International Genetically Engineered Machine Competition</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Paris</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2024.10</span></p></div>
+        <span class="mile-pts">+3,000</span>
+      </article>
+      <article class="mile pop">
+        <span class="stamp gold"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-flask"/></svg></span>
+        <div><h4>First Prize</h4><p class="event">Chinese Chemistry Olympiad</p><p class="meta"><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-location-dot"/></svg>Sichuan</span><span><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-calendar-days"/></svg>2022.09</span></p></div>
+        <span class="mile-pts">+3,000</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= AIRPORT (BLOG) ======================= -->
+  <section class="sec" id="airport" aria-labelledby="airport-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:#6cc3ee"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-paper-plane"/></svg></span>
+      <div><p class="eyebrow">Blog</p><h2 id="airport-h">Airport</h2></div>
+    </div>
+    <div class="airport pop">
+      <div class="talk static">
+        <ol class="lines sr-only"><li>Roger that! Looking to fly somewhere? Bowen writes technical blogs about programming, algorithms, and machine learning over on RainCedar's Blog. Shall we take off?</li></ol>
+        <div class="bubble static">
+          <span class="nametag" style="--tag:var(--blue-d);--tag-ink:#fff">Dodo Airlines</span>
+          <span class="say"><span class="ghost">Roger that! Looking to fly somewhere? Bowen writes technical blogs about programming, algorithms, and machine learning over on RainCedar's Blog. Shall we take off?</span><span class="typed">Roger that! Looking to fly somewhere? Bowen writes technical blogs about programming, algorithms, and machine learning over on RainCedar's Blog. Shall we take off?</span></span>
+        </div>
+        <div class="choices static">
+          <a class="choice" href="https://www.raincedar.me/" target="_blank" rel="noopener noreferrer"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>Yes, let's fly to RainCedar's Blog!</a>
+          <a class="choice" href="starry/"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>Visit the neighbor, Starry Island!</a>
+          <button class="choice" type="button" data-reply="No problem! The runway is always open — come back whenever you're ready~"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="assets/icons.svg#i-hand-point-right"/></svg>Maybe later</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= MAIL ======================= -->
+  <section class="sec" id="mail" aria-labelledby="mail-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--pink)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-envelope"/></svg></span>
+      <div><p class="eyebrow">Contact</p><h2 id="mail-h">Mailbox</h2></div>
+    </div>
+    <article class="letter pop">
+      <div class="postage" aria-hidden="true"><img src="assets/bunny.png" alt="" width="360" height="483"><span>ASTRA</span></div>
+      <div class="letter-paper">
+        <p class="to">Dear visitor,</p>
+        <p>Thanks for stopping by Astra Island! Whether it's LLM reasoning, a research collaboration, or anything else on your mind, feel free to drop me a letter — I'd love to hear from you.</p>
+        <p class="letter-addr"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-envelope"/></svg>bliu690@connect.hkust-gz.edu.cn</p>
+        <div class="letter-actions">
+          <a class="btn btn-pink" href="mailto:bliu690@connect.hkust-gz.edu.cn"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-paper-plane"/></svg>Send a letter</a>
+          <button class="btn btn-ghost" type="button" data-copy="bliu690@connect.hkust-gz.edu.cn"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-copy"/></svg>Copy address</button>
+        </div>
+        <p class="from">From,<br><b>Bowen</b></p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Astra Island · © Bowen LIU · MIT License<br>A fan-made, Animal Crossing–inspired edition of my homepage. Not affiliated with Nintendo.<br>Bunny illustration © its original artist.</p>
+  <br>
+  <a class="btn btn-ghost" href="/"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-house"/></svg>Back to the mainland</a>
+  <a class="btn btn-ghost" href="starry/"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane-departure"/></svg>Fly to Starry Island</a>
+</footer>
+
+<!-- ======================= NOOKPHONE + HUD ======================= -->
+<div class="hud" aria-hidden="true">
+  <div class="hud-date"><span class="hud-md"></span><svg class="ico hud-wx"><use href="assets/icons.svg#i-sun"/></svg><span class="hud-wd"></span></div>
+  <div class="hud-time"><span class="hud-hm"></span><small class="hud-ap"></small></div>
+</div>
+
+<button class="phone-fab" type="button" aria-haspopup="dialog" aria-controls="nookphone" aria-expanded="false">
+  <span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-mobile-screen-button"/></svg></span>
+  <span class="label">NookPhone</span>
+  <span class="ring" aria-hidden="true"></span>
+</button>
+
+<div class="phone-wrap" id="nookphone" role="dialog" aria-modal="true" aria-label="NookPhone" hidden>
+  <div class="phone-backdrop" data-close></div>
+  <div class="phone">
+    <div class="phone-screen">
+      <div class="phone-top"><span data-clock></span><span class="phone-bells"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#art-bellbag"/></svg><b data-bells>0</b></span></div>
+      <p class="phone-title">Astra Island</p>
+      <nav class="phone-apps" aria-label="Island apps">
+        <a class="app" href="#passport"><span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-id-card"/></svg></span>Passport</a>
+        <a class="app" href="#news"><span class="app-ico" style="--c:var(--orange)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-bullhorn"/></svg></span>Bulletin</a>
+        <a class="app" href="#recipes"><span class="app-ico" style="--c:#c48a4f"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-hammer"/></svg></span>DIY Recipes</a>
+        <a class="app" href="#flights"><span class="app-ico" style="--c:var(--blue-d)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-plane"/></svg></span>Dodo Airlines</a>
+        <a class="app" href="#pockets"><span class="app-ico" style="--c:var(--yellow-d)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-bag-shopping"/></svg></span>Pockets</a>
+        <a class="app" href="#miles"><span class="app-ico" style="--c:#62b548"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-medal"/></svg></span>Nook Miles</a>
+        <a class="app" href="#airport"><span class="app-ico" style="--c:#6cc3ee"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-paper-plane"/></svg></span>Airport</a>
+        <a class="app" href="#mail"><span class="app-ico" style="--c:var(--pink)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-envelope"/></svg></span>Mailbox</a>
+        <a class="app" href="starry/"><span class="app-ico" style="--c:#ef8bb0"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-star"/></svg></span>Starry Island</a>
+        <button class="app" type="button" data-action="sound" aria-pressed="false"><span class="app-ico" style="--c:var(--purple)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-volume-xmark"/></svg></span>Voices</button>
+        <button class="app" type="button" data-action="time"><span class="app-ico" style="--c:#f08d6e"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-clock-rotate-left"/></svg></span>Time Travel</button>
+        <a class="app" href="/"><span class="app-ico" style="--c:var(--wood)"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-house"/></svg></span>Mainland</a>
+      </nav>
+      <p class="phone-foot"><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-leaf"/></svg>NookPhone</p>
+    </div>
+    <button class="phone-close" type="button" data-close><svg class="ico" aria-hidden="true"><use href="assets/icons.svg#i-xmark"/></svg>Close</button>
+  </div>
+</div>
+
+<script src="assets/acnh.js" defer></script>
+</body>
+</html>

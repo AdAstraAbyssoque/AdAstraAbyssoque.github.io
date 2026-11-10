@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-sprite="../assets/icons.svg" data-fruit="桃子" data-island="starry">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Starry Island · Starry 的小岛工作台</title>
+<meta name="description" content="欢迎来到 Starry Island —— 人才猎头 Starry 的小岛工作台（动森版）。">
+<meta name="theme-color" content="#ef8bb0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 7l8 16.5 18 2.5-13 12.5 3 18-16-8.5-16 8.5 3-18L6 26l18-2.5z' fill='%23f8d052' stroke='%23f8d052' stroke-width='6' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="../assets/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/acnh.css">
+<style>
+  html[data-island="starry"] { --teal: #ef8bb0; --teal-d: #d4668e; --mint: #ffe3ed; --fruit: #f7a29d; }
+  [data-island="starry"] .ribbon-wrap { filter: drop-shadow(0 4px 0 rgba(176, 70, 110, .4)); }
+  [data-island="starry"] .passport::before { background-image: radial-gradient(rgba(239, 139, 176, .14) 2px, transparent 2.5px); }
+
+  .breeze { max-width: 880px; margin: 0 auto; }
+  .breeze-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; list-style: none; }
+  .breeze-meta li { padding: 8px 18px; border-radius: 999px; background: var(--paper); box-shadow: var(--shadow-sm); font-weight: 800; }
+  .breeze-meta b { color: var(--teal-d); margin-right: 8px; }
+
+  .chip { padding: 5px 14px; border-radius: 999px; background: var(--cream-2); color: var(--ink); font-size: 14px; font-weight: 900; }
+  .pp-friends.tags { padding-bottom: 0; }
+
+  .routes { columns: 2; column-gap: 22px; }
+  .route { break-inside: avoid; margin-bottom: 22px; background: var(--paper); border-radius: 26px; box-shadow: var(--shadow); overflow: hidden; }
+  .route-head { display: flex; align-items: center; gap: 8px; padding: 9px 20px; background: var(--blue); color: #fff; font-size: 13px; font-weight: 1000; letter-spacing: .1em; }
+  .route-head .ico { width: 16px; height: 16px; fill: #fff; }
+  .route-head span { margin-left: auto; opacity: .85; }
+  .route h3 { padding: 14px 22px 0; font-size: 24px; font-weight: 1000; line-height: 1.3; }
+  .route-loc { display: flex; align-items: center; gap: 6px; padding: 2px 22px 0; color: var(--ink-3); font-size: 14px; font-weight: 900; }
+  .route-loc .ico { width: 14px; height: 14px; fill: var(--blue-d); }
+  .route ul { list-style: none; display: grid; gap: 8px; padding: 12px 22px 22px; }
+  .route li { position: relative; padding-left: 24px; font-size: 15px; line-height: 1.7; }
+  .route li::before { content: ""; position: absolute; left: 0; top: .42em; width: 15px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 5c15 6 25 19 25 32 0 12-11 21-25 21S7 49 7 37C7 24 17 11 32 5z' fill='%237bc95a'/%3E%3Cpath d='M32 14v43' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+  .route li b { color: var(--teal-d); }
+
+  .bench { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .bench-card { padding: 22px 24px 26px; border-radius: 30px; box-shadow: var(--shadow); }
+  .bench-card.pink { background: var(--teal); }
+  .bench-card.yellow { background: var(--yellow); }
+  .bench-card h3 { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; color: #fff; font-size: 19px; font-weight: 1000; }
+  .bench-card.yellow h3 { color: #6a4716; }
+  .on-pill { padding: 3px 12px; border-radius: 999px; background: var(--paper); color: var(--teal-d); font-size: 12px; font-weight: 1000; }
+  .bench-card .tabs { margin: 0 0 14px; }
+  .mode-list { list-style: none; padding: 14px 18px; border-radius: 20px; background: var(--paper); }
+  .mode-list li { position: relative; padding: 6px 0 6px 26px; font-weight: 800; }
+  .mode-list li::before { content: "🌿"; position: absolute; left: 0; top: 6px; font-size: 14px; }
+  .chalk { padding: 12px; border-radius: 20px; background: var(--wood); box-shadow: inset 0 -4px 0 var(--wood-d); }
+  .chalk pre { margin: 0; padding: 16px 18px; border-radius: 12px; background: #35604a; color: #f4f1e4; overflow-x: auto; font: 600 13.5px/1.75 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .chalk .k { color: #9fe3c6; } .chalk .s { color: #ffd98a; } .chalk .c { color: #b9c8b8; }
+  .why-btn { margin-top: 14px; }
+  .talk.why { margin-top: 26px; width: 100%; }
+  .talk.why .bubble { min-height: 0; font-size: 17px; padding: 30px 28px 32px; }
+
+  .signboard { position: relative; max-width: 680px; margin: 40px auto 30px; padding: 12px; border-radius: 26px; background: var(--wood); box-shadow: var(--shadow), inset 0 -5px 0 var(--wood-d); }
+  .signboard::after { content: ""; position: absolute; left: 50%; bottom: -34px; z-index: -1; width: 22px; height: 40px; margin-left: -11px; border-radius: 0 0 8px 8px; background: var(--wood-d); }
+  .sign-inner { padding: 22px 28px 20px; border-radius: 18px; background: var(--paper); }
+  .sign-inner .eyebrow { font-size: 12px; letter-spacing: .16em; color: var(--ink-3); font-weight: 900; }
+  .sign-inner h3 { font-size: 22px; font-weight: 1000; margin: 2px 0 8px; }
+  .sign-inner li { list-style: none; display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 2px dashed var(--line); font-weight: 850; }
+  .sign-inner li:last-child { border-bottom: 0; }
+  .sign-inner li .ico { width: 18px; height: 18px; fill: var(--teal-d); flex: none; }
+
+  @media (max-width: 860px) {
+    .routes { columns: 1; }
+    .bench { grid-template-columns: minmax(0, 1fr); }
+  }
+</style>
+<script>
+(function (d) {
+  var n = new Date(), m = n.getMonth(), h = n.getHours(), t = "auto";
+  try { t = JSON.parse(localStorage.getItem("isle-tod")) || "auto"; } catch (e) {}
+  d.className += " js";
+  d.setAttribute("data-season", m === 11 || m <= 1 ? "winter" : m <= 4 ? "spring" : m <= 7 ? "summer" : "autumn");
+  d.setAttribute("data-tod", /^(morning|day|evening|night)$/.test(t) ? t : h >= 5 && h < 9 ? "morning" : h >= 9 && h < 17 ? "day" : h >= 17 && h < 19 ? "evening" : "night");
+  setTimeout(function () { if (!window.ISLE) d.className = d.className.replace(" js", ""); }, 3000);
+})(document.documentElement);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="art-star" viewBox="0 0 64 64">
+      <path d="M32 7l8 16.5 18 2.5-13 12.5 3 18-16-8.5-16 8.5 3-18L6 26l18-2.5z" fill="#f8d052" stroke="#f8d052" stroke-width="6" stroke-linejoin="round"/>
+      <path d="M32 7l8 16.5 18 2.5-13 12.5 3 18-16-8.5z" fill="#efbf3a" stroke="#efbf3a" stroke-width="6" stroke-linejoin="round" opacity=".6"/>
+      <circle cx="26" cy="31" r="2.6" fill="#7a5a2a"/><circle cx="38" cy="31" r="2.6" fill="#7a5a2a"/>
+      <path d="M28.5 37q3.5 3 7 0" stroke="#7a5a2a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="21.5" cy="36" rx="3" ry="1.9" fill="#f49bb6" opacity=".8"/><ellipse cx="42.5" cy="36" rx="3" ry="1.9" fill="#f49bb6" opacity=".8"/>
+    </symbol>
+    <symbol id="art-cloud" viewBox="0 -16 200 106">
+      <path d="M38 80c-20 0-32-12-30-27 2-14 15-22 29-20 4-18 22-30 41-26 9-14 28-20 45-12 14 6 22 19 22 32 18-4 36 8 38 26 2 16-10 27-28 27z" fill="#fff"/>
+      <ellipse cx="98" cy="77" rx="76" ry="5" fill="#e0eff9"/>
+    </symbol>
+    <symbol id="art-tree" viewBox="0 0 200 250">
+      <ellipse cx="100" cy="240" rx="64" ry="9" fill="#1e320a" opacity=".2"/>
+      <path d="M86 150c3 32-1 60-12 90h52c-11-30-15-58-12-90z" fill="#a9733f"/>
+      <path d="M104 150c-1 32 4 60 12 90h10c-11-30-15-58-12-90z" fill="#8a5a30"/>
+      <g style="fill:var(--canopy-lo-now)">
+        <circle cx="100" cy="86" r="64"/><circle cx="52" cy="118" r="44"/><circle cx="148" cy="118" r="44"/><circle cx="100" cy="138" r="48"/>
+      </g>
+      <g style="fill:var(--canopy-now)">
+        <circle cx="100" cy="78" r="62"/><circle cx="53" cy="108" r="42"/><circle cx="147" cy="108" r="42"/><circle cx="100" cy="126" r="46"/>
+      </g>
+      <ellipse cx="74" cy="52" rx="30" ry="17" transform="rotate(-24 74 52)" style="fill:var(--canopy-hi-now)" opacity=".85"/>
+      <circle cx="124" cy="40" r="9" style="fill:var(--canopy-hi-now)" opacity=".75"/>
+      <circle cx="34" cy="100" r="7" style="fill:var(--canopy-hi-now)" opacity=".6"/>
+      <g style="fill:var(--fruit)"><circle cx="64" cy="112" r="12"/><circle cx="126" cy="92" r="12"/><circle cx="146" cy="134" r="12"/></g>
+      <g fill="#fff" opacity=".6"><circle cx="60" cy="107" r="3.6"/><circle cx="122" cy="87" r="3.6"/><circle cx="142" cy="129" r="3.6"/></g>
+    </symbol>
+    <symbol id="art-palm" viewBox="0 0 240 300">
+      <ellipse cx="108" cy="292" rx="46" ry="7" fill="#3c2a0a" opacity=".18"/>
+      <path d="M94 292c4-70 16-134 38-196h18c-18 64-28 128-30 196z" fill="#cc9d5e"/>
+      <path d="M97 262q12 5 24 0M100 226q12 5 25 0M106 191q11 5 23 0M113 158q11 5 22 0M122 126q10 4 20 0" fill="none" stroke="#a87b43" stroke-width="4.5" stroke-linecap="round"/>
+      <g fill="#5cb34b">
+        <path d="M140 96C110 70 60 70 20 100c40-14 80-10 120 4z"/>
+        <path d="M140 96c30-30 74-26 96 4-36-12-66-8-96 6z"/>
+        <path d="M140 94C124 54 90 30 52 26c34 18 58 40 82 74z"/>
+        <path d="M142 94c18-42 54-60 88-54-34 14-58 32-82 60z"/>
+        <path d="M136 100c-24 12-44 38-50 72 18-28 36-46 56-64z"/>
+        <path d="M144 100c28 12 46 38 48 70-16-28-32-44-52-62z"/>
+      </g>
+      <g fill="none" stroke="#449838" stroke-width="3" stroke-linecap="round">
+        <path d="M138 99C104 80 64 82 26 99"/><path d="M142 99c30-20 64-18 90 0"/><path d="M137 96C122 62 92 40 58 30"/><path d="M144 96c18-34 50-50 82-52"/>
+      </g>
+      <circle cx="132" cy="104" r="8.5" fill="#8a5a30"/><circle cx="148" cy="106" r="8.5" fill="#76492a"/><circle cx="140" cy="115" r="7.5" fill="#8a5a30"/>
+    </symbol>
+    <symbol id="art-fruit" viewBox="0 0 40 40">
+      <path d="M20 11c-3-3-7-3-10-1-6 4-7 12-4 18 3 6 8 10 14 10s11-4 14-10c3-6 2-14-4-18-3-2-7-2-10 1z" fill="#f9aaa3"/>
+      <path d="M20 11c3-3 7-3 10-1 6 4 7 12 4 18-3 6-8 10-14 10 5-3 8-8 8-15 0-5-3-10-8-12z" fill="#f28a8a"/>
+      <path d="M20 12c-3 7-3 15 0 25" stroke="#e27878" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M20 11c0-3 1-5 3-6" stroke="#7a5a2a" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+      <path d="M22.5 6.5c4-3 9-2 11 1-4 2.2-8 2.2-11-1z" fill="#78b543"/>
+      <ellipse cx="12.5" cy="20" rx="2.8" ry="4.6" fill="#fff" opacity=".45" transform="rotate(20 12.5 20)"/>
+    </symbol>
+    <symbol id="art-bellbag" viewBox="0 0 40 40">
+      <path d="M14 10c-2-3-1-6 2-6 2 0 3 2 4 3 1-1 2-3 4-3 3 0 4 3 2 6z" fill="#e7c587"/>
+      <path d="M13 11h14c7 5 10 11 10 16 0 7-7 10-17 10S3 34 3 27c0-5 3-11 10-16z" fill="#f4dda8"/>
+      <path d="M27 11c7 5 10 11 10 16 0 7-7 10-17 10 8-2 13-6 13-12 0-5-2-10-6-14z" fill="#e8c98a"/>
+      <rect x="12" y="9" width="16" height="4" rx="2" fill="#c38f4b"/>
+      <path d="M20 17c-3.6 0-5.5 2.6-5.5 5.6v3.2l-1.6 2.2h14.2l-1.6-2.2v-3.2c0-3-1.9-5.6-5.5-5.6z" fill="#f2b62f"/>
+      <circle cx="20" cy="30.2" r="1.8" fill="#f2b62f"/>
+    </symbol>
+    <symbol id="art-flower" viewBox="0 0 60 60">
+      <path d="M30 58V32" stroke="#4f9d3a" stroke-width="4" stroke-linecap="round"/>
+      <path d="M30 47c-8-6-16-4-18 0 6 4 12 4 18 0zM30 51c8-6 16-4 18 0-6 4-12 4-18 0z" fill="#5fb246"/>
+      <g style="fill:var(--petal, #fff)"><circle cx="30" cy="12" r="8"/><circle cx="41" cy="20" r="8"/><circle cx="37" cy="33" r="8"/><circle cx="23" cy="33" r="8"/><circle cx="19" cy="20" r="8"/></g>
+      <circle cx="30" cy="23" r="6" fill="#f8d052"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="particles" aria-hidden="true"></div>
+
+<!-- ======================= ISLAND ======================= -->
+<header class="hero" id="top">
+  <div class="sky" aria-hidden="true">
+    <div class="stars"></div>
+    <div class="sun"></div>
+    <div class="cloud c1"><svg viewBox="0 -16 200 106"><use href="#art-cloud"/></svg></div>
+    <div class="cloud c2"><svg viewBox="0 -16 200 106"><use href="#art-cloud"/></svg></div>
+    <div class="cloud c3"><svg viewBox="0 -16 200 106"><use href="#art-cloud"/></svg></div>
+  </div>
+  <svg class="sea" viewBox="0 0 1440 300" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" style="stop-color:var(--sea-1)"/>
+        <stop offset="1" style="stop-color:var(--sea-2)"/>
+      </linearGradient>
+    </defs>
+    <rect width="1440" height="300" fill="url(#seaGrad)"/>
+    <rect width="1440" height="4" fill="#fff" opacity=".5"/>
+    <g class="waves" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".5">
+      <path vector-effect="non-scaling-stroke" d="M120 50q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M420 80q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M700 36q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M960 90q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M1240 54q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M280 140q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M1080 160q15-8 30 0t30 0"/>
+      <path vector-effect="non-scaling-stroke" d="M580 175q15-8 30 0t30 0"/>
+    </g>
+  </svg>
+  <svg class="beach" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 34C220 58 420 14 640 36S1000 60 1200 30s180-6 240 8V150C1240 176 1000 130 760 152S280 128 0 160z" style="fill:var(--wet-now)"/>
+    <path d="M0 48C220 72 420 28 640 50S1000 74 1200 44s180-6 240 8V150C1240 176 1000 130 760 152S280 128 0 160z" style="fill:var(--sand-now)"/>
+    <path class="foam" vector-effect="non-scaling-stroke" d="M0 34C220 58 420 14 640 36S1000 60 1200 30s180-6 240 8" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+    <path vector-effect="non-scaling-stroke" d="M0 160C280 128 520 174 760 152S1240 176 1440 150" fill="none" style="stroke:var(--rim-now)" stroke-width="12"/>
+  </svg>
+
+  <button class="tree" type="button" data-drop="bells" style="right:1%;bottom:21%;width:150px" aria-label="摇一摇椰子树"><svg viewBox="0 0 240 300"><use href="#art-palm"/></svg></button>
+  <button class="tree" type="button" data-drop="fruit" style="right:5%;bottom:3%;width:196px" aria-label="摇一摇桃树"><svg viewBox="0 0 200 250"><use href="#art-tree"/></svg></button>
+  <button class="tree" type="button" data-drop="bells" style="left:1%;bottom:24%;width:128px" aria-label="摇一摇椰子树"><svg viewBox="0 0 240 300"><use href="#art-palm"/></svg></button>
+  <button class="tree" type="button" data-drop="fruit" style="left:5%;bottom:6%;width:172px" aria-label="摇一摇桃树"><svg viewBox="0 0 200 250"><use href="#art-tree"/></svg></button>
+
+  <div class="hero-inner">
+    <h1 class="logo">
+      <span class="logo-top">欢迎来到</span>
+      <span class="logo-main" data-split><svg class="logo-leaf" viewBox="0 0 64 64" aria-hidden="true"><use href="#art-star"/></svg>Starry Island</span>
+      <span class="ribbon-wrap"><span class="ribbon">人才猎头的小岛工作台</span></span>
+    </h1>
+
+    <button class="villager round" type="button" aria-label="和 Starry 说话"
+      data-poke="嗯？要不要看看最新的岗位地图？|今天也在把简历海整理成一条条航线～|偷偷告诉你：摇一摇树，说不定会掉铃钱哦～">
+      <img src="avatar.jpg" alt="" width="432" height="422">
+      <span class="emote" aria-hidden="true">!</span>
+    </button>
+
+    <div class="talk">
+      <ol class="lines sr-only">
+        <li>哈喽~ 我是专注做 LLM 基座算法的猎头，可以叫我 starry 或者小帅！</li>
+        <li>欢迎来到我的人才小岛，这里有许多高薪、WLB、高成长空间的机会~</li>
+        <li>想看机会就选下面的选项，迷路了也可以打开右下角的 NookPhone 哦！</li>
+      </ol>
+      <div class="choices" hidden>
+        <a class="choice" href="#jobs"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="../assets/icons.svg#i-hand-point-right"/></svg>看看在招机会！</a>
+        <a class="choice" href="#passport"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="../assets/icons.svg#i-hand-point-right"/></svg>你主要做哪些方向？</a>
+        <a class="choice" href="#mail"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="../assets/icons.svg#i-hand-point-right"/></svg>怎么联系你？</a>
+        <button class="choice" type="button" data-reply="好呀～慢慢逛，有想聊的随时来找我！"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="../assets/icons.svg#i-hand-point-right"/></svg>先随便逛逛</button>
+      </div>
+      <div class="bubble" role="button" tabindex="0" aria-label="下一句">
+        <span class="nametag" style="--tag:var(--pink);--tag-ink:#fff">Starry</span>
+        <span class="say" aria-hidden="true"><span class="ghost"></span><span class="typed"></span></span>
+        <span class="next" aria-hidden="true"></span>
+      </div>
+      <button class="sound-btn" type="button" data-action="sound" aria-pressed="false" aria-label="岛民声音"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-volume-xmark"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <span class="deco" style="right:2%;top:260px;--petal:#f7b6c8" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="right:5%;top:300px;width:52px;--petal:#fff" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="left:3%;top:1300px;--petal:#f8d052" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="right:4%;top:2700px;--petal:#ac94ea" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+  <span class="deco" style="left:4%;top:4300px;--petal:#f7b6c8" aria-hidden="true"><svg viewBox="0 0 60 60"><use href="#art-flower"/></svg></span>
+
+  <!-- ======================= BREEZE ======================= -->
+  <section class="sec" id="breeze" aria-labelledby="breeze-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--orange)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-bullhorn"/></svg></span>
+      <div><p class="eyebrow">Today's breeze</p><h2 id="breeze-h">今日小岛播报</h2></div>
+    </div>
+    <div class="breeze pop">
+      <div class="talk static">
+        <div class="bubble static">
+          <span class="nametag" style="--tag:var(--yellow);--tag-ink:#6a4716">小岛播报</span>
+          <span class="say"><span class="ghost">各位岛民早上好！今天适合把名单再核实一轮～</span><span class="typed">各位岛民早上好！今天适合把名单再核实一轮～</span></span>
+        </div>
+      </div>
+      <ul class="breeze-meta">
+        <li><b>天气</b>人才顺风</li>
+        <li><b>状态</b>正在把混乱的简历海整理成一条条航线</li>
+        <li><b>小岛</b>🏝️ Island talent lab online</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================= PASSPORT ======================= -->
+  <section class="sec" id="passport" aria-labelledby="passport-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-id-card"/></svg></span>
+      <div><p class="eyebrow">About</p><h2 id="passport-h">岛民护照</h2></div>
+    </div>
+    <article class="passport panel pop">
+      <div class="pp-band"><span><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-star"/></svg>PASSPORT</span><span>STARRY ISLAND</span></div>
+      <div class="pp-body">
+        <figure class="pp-photo full">
+          <img src="avatar.jpg" alt="Starry 的头像：戴白色绒帽、蓝色手套的女孩" width="432" height="422">
+          <figcaption>岛主照片</figcaption>
+        </figure>
+        <div class="pp-info">
+          <p class="pp-title"><span>靠谱的</span><span>普通人</span></p>
+          <h3 class="pp-name">starry / 小帅<small>岛主 / talent partner</small></h3>
+          <dl class="pp-fields">
+            <div class="wide"><dt>技术方向</dt><dd><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-microchip"/></svg>预训练、后训练、Agent、评测</dd></div>
+            <div class="wide"><dt>岗位层级</dt><dd><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-briefcase"/></svg>算法工程师、专家、Tech Lead、算法负责人、AI总监</dd></div>
+            <div><dt>地域</dt><dd><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京、上海、杭州、深圳</dd></div>
+            <div><dt>人才库</dt><dd><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-users"/></svg>565+ 条核实航线</dd></div>
+          </dl>
+        </div>
+        <div class="pp-stamp" aria-hidden="true"><span>VERIFIED<b>565+</b>STARRY ISLE</span></div>
+      </div>
+      <p class="pp-comment">哈喽~ 我是专注做LLM基座算法的猎头，可以叫我starry或者小帅！欢迎来到我的人才小岛，这里有许多<b>高薪、WLB、高成长空间</b>的机会~</p>
+      <div class="pp-friends tags">
+        <span class="label">专注赛道</span>
+        <span class="chip">LLM 预训练</span><span class="chip">LLM 后训练</span><span class="chip">人才盘点</span><span class="chip">RLHF</span><span class="chip">Scaling</span><span class="chip">职业规划</span><span class="chip">候选人体验</span>
+      </div>
+      <div class="pp-friends">
+        <span class="label">好友码</span>
+        <a class="friend" href="https://github.com/Starry20040916" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-github"/></svg></a>
+        <a class="friend" href="mailto:cc77135@qq.com" aria-label="邮箱" title="cc77135@qq.com"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-envelope"/></svg></a>
+        <button class="friend" type="button" data-copy="18767168483" aria-label="复制微信号" title="微信/电话：18767168483"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-weixin"/></svg></button>
+      </div>
+    </article>
+  </section>
+
+  <!-- ======================= JOBS ======================= -->
+  <section class="sec" id="jobs" aria-labelledby="jobs-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--blue-d)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane"/></svg></span>
+      <div><p class="eyebrow">Open roles</p><h2 id="jobs-h">在招机会 · 岗位地图</h2></div>
+    </div>
+    <p class="sec-note">常驻合作的一线团队与在招方向（按公司归类，持续更新）。想聊任意方向，随时联系我～</p>
+    <div class="tabs" role="tablist" aria-label="按城市筛选" data-filter-target="#route-list">
+      <button class="tab" type="button" role="tab" aria-selected="true" data-filter="all">全部 <span class="n">15</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="bj">北京 <span class="n">12</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="sh">上海 <span class="n">13</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="hz">杭州 <span class="n">4</span></button>
+      <button class="tab" type="button" role="tab" aria-selected="false" data-filter="sz">深圳 <span class="n">1</span></button>
+    </div>
+    <div class="routes" id="route-list" data-stagger>
+      <article class="route pop" data-tags="bj sh hz sz">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 01</span></div>
+        <h3>字节跳动</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海 / 杭州 / 深圳</p>
+        <ul>
+          <li><b>AI Data 事业部</b>：Seed 上下游，负责 Seed 数据构建全链路；团队自带预训练、后训练环节，技术深度高、资源充足</li>
+          <li><b>Seed</b>：人才密度提升岗位，覆盖 RL、Agentic、Code、RSI、Multi-agent 等方向</li>
+          <li><b>国际化电商事业部</b>：独立海外业务，增速快，招聘 Agent 算法、后训练算法，业务与模型结合紧密</li>
+          <li><b>TT 非中区广告</b>：海外增势业务，自有模型与后训练环节，数据资源与落地场景优秀</li>
+          <li><b>AI 应用与创新团队</b>：大模型应用算法（多模态）、代码大模型算法专家</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="hz bj">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 02</span></div>
+        <h3>阿里巴巴</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>杭州 / 北京</p>
+        <ul>
+          <li><b>千问 C 事业部</b>：阿里核心 AI Native 产品，资源充沛；基础模型组覆盖 Code / RL / 大模型 / Agentic，另含 Agent 座舱、行业、轻量化硬件方向</li>
+          <li><b>Qwen</b>：Code 方向、Agentic 研究方向，及通用 Agent 等团队</li>
+          <li><b>淘天 Agent 事业部</b>：Agent 各业务方向，与模型结合紧密</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="sh hz bj">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 03</span></div>
+        <h3>小红书</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>上海 / 杭州 / 北京</p>
+        <ul>
+          <li><b>Dots 基础模型基座事业部</b>：小红书自研大模型的核心基座团队，覆盖预训练到后训练全链路，处于快速扩张期</li>
+          <li><b>社区算法部</b>：负责主站搜索、推荐与 AI 搜等核心流量业务，业务与模型结合紧密，岗位较多</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="sh bj">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 04</span></div>
+        <h3>米哈游</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>上海 / 北京</p>
+        <ul>
+          <li><b>anuttacon</b>：米哈游的前沿研究实验室，专注预训练数据与 Scaling law 等大模型底层方向</li>
+          <li><b>本部</b>：应用后训练团队，将大模型能力落地到游戏等具体业务场景</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 05</span></div>
+        <h3>腾讯</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海</p>
+        <ul>
+          <li><b>混元事业部</b>：腾讯自研大模型「混元」的核心基座团队，覆盖后训练等基础模型环节</li>
+          <li><b>微信基座事业部</b>：微信体系内的基座团队，后训练与模型结合深度高</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 06</span></div>
+        <h3>Shopee</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海</p>
+        <ul>
+          <li><b>LLM 基座事业部</b>：预训练、后训练</li>
+          <li><b>AI Native 模型部</b>：后训练、Agent 算法、大模型应用算法</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 07</span></div>
+        <h3>MiniMax</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海</p>
+        <ul>
+          <li><b>基座团队</b>：预训练、后训练、多模态、X10、TL 等方向，技术 bar 较高</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 08</span></div>
+        <h3>阶跃星辰</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海</p>
+        <ul>
+          <li><b>基座团队</b>：大模型训练框架（训练 / 推理 / 算子）、后训练、Coding、数据、Coding 评测等方向较急，技术 bar 较高</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 09</span></div>
+        <h3>九坤</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海</p>
+        <ul>
+          <li><b>至知基座研究院</b>：Code、Agentic、RL 等方向，技术 bar 高、薪资高</li>
+          <li><b>总部 Agent 团队</b>：LLM Agent、多模态 Agent 方向</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="hz bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 10</span></div>
+        <h3>蚂蚁集团</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>杭州 / 北京 / 上海</p>
+        <ul>
+          <li><b>百灵事业部</b>：垂域后训练算法</li>
+          <li><b>金融 AI Lab</b>：Agent 后训练算法</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 11</span></div>
+        <h3>快手</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京</p>
+        <ul>
+          <li><b>文本基座团队</b>：快手自研大模型的文本基座团队，覆盖预训练 / 后训练核心方向</li>
+          <li><b>Keye 多模态基座团队</b>：专注多模态方向的基座团队</li>
+          <li><b>可灵基座团队</b>：可灵背后的基座团队，探索多模态大统一与世界模型</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 12</span></div>
+        <h3>盛大</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>上海 为主</p>
+        <ul>
+          <li><b>Agent 算法</b>：与模型结合深度好，薪资高、时薪高，团队较纯粹</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 13</span></div>
+        <h3>B站</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>上海</p>
+        <ul>
+          <li><b>算法团队</b>：多模态算法、Agent 算法、AI 搜等，技术深度不错，与模型部分结合</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 14</span></div>
+        <h3>记忆张量</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>上海</p>
+        <ul>
+          <li><b>基座团队</b>：预训练算法、后训练算法，团队新建、岗位较多</li>
+        </ul>
+      </article>
+      <article class="route pop" data-tags="bj sh">
+        <div class="route-head"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>DODO AIRLINES<span>航线 15</span></div>
+        <h3>面壁智能</h3>
+        <p class="route-loc"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-location-dot"/></svg>北京 / 上海</p>
+        <ul>
+          <li><b>行业模型 Agent 算法</b>：与模型部分结合，落地于行业业务</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= WORKBENCH ======================= -->
+  <section class="sec" id="workbench" aria-labelledby="workbench-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:#c48a4f"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-hammer"/></svg></span>
+      <div><p class="eyebrow">Workbench</p><h2 id="workbench-h">小岛工作台</h2></div>
+    </div>
+    <p class="sec-note">内容还在长叶子，先让按钮、标签和小组件一起热闹起来。</p>
+    <div class="bench">
+      <div class="bench-card pink pop">
+        <h3>工作模式 <span class="on-pill">ON ●</span></h3>
+        <div class="tabs" role="tablist" aria-label="工作模式" data-filter-target="#mode-list">
+          <button class="tab" type="button" role="tab" aria-selected="true" data-filter="m0">正在发芽</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-filter="m1">想慢慢写</button>
+          <button class="tab" type="button" role="tab" aria-selected="false" data-filter="m2">已经上岸</button>
+        </div>
+        <ul class="mode-list" id="mode-list">
+          <li data-tags="m0">分层核实基座人才名单</li>
+          <li data-tags="m0">追踪 arXiv 论文作者图谱</li>
+          <li data-tags="m0">整理候选人联系表</li>
+          <li class="is-hidden" data-tags="m1">把人才盘点写成公开方法论</li>
+          <li class="is-hidden" data-tags="m1">做一份基座岗位市场风向图</li>
+          <li class="is-hidden" data-tags="m1">写点候选人的小故事</li>
+          <li class="is-hidden" data-tags="m2">565+ 人才地图</li>
+          <li class="is-hidden" data-tags="m2">多个头部团队岗位交付</li>
+          <li class="is-hidden" data-tags="m2">这座可爱的小岛工作台</li>
+        </ul>
+      </div>
+      <div class="bench-card yellow pop">
+        <h3>岛主伪代码</h3>
+        <div class="chalk"><pre><code><span class="k">const</span> starry = <span class="k">createTalentPartner</span>({
+  role: <span class="s">"starry"</span>,
+  focus: [<span class="s">"pretraining"</span>, <span class="s">"post-training"</span>],
+  pool: <span class="s">"565+ verified"</span>,
+  goal: <span class="s">"honest matching, no oversell"</span>,
+});  <span class="c">// 把混乱的简历海变成清晰航线</span></code></pre></div>
+        <button class="btn btn-sm btn-ghost why-btn" type="button" data-talk-open="why-talk" aria-expanded="false" aria-controls="why-talk"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-lightbulb"/></svg>为什么放伪代码？</button>
+      </div>
+    </div>
+    <div class="talk static why" id="why-talk" hidden>
+      <ol class="lines sr-only"><li>因为我相信招聘也可以被工程化：像写代码一样把流程拆清楚，每一条判断都可复现、可回溯。</li></ol>
+      <div class="bubble static">
+        <span class="nametag" style="--tag:var(--pink);--tag-ink:#fff">Starry</span>
+        <span class="say" aria-hidden="true"><span class="ghost"></span><span class="typed"></span></span>
+      </div>
+    </div>
+
+    <div class="signboard pop" id="rules">
+      <div class="sign-inner">
+        <p class="eyebrow">PRIVACY &amp; COMPLIANCE</p>
+        <h3>隐私与合规声明</h3>
+        <ul>
+          <li><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-check"/></svg>简历仅经授权推荐</li>
+          <li><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-check"/></svg>候选人信息脱敏</li>
+          <li><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-check"/></svg>不承诺保 offer、不夸大成功率</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= AIRPORT ======================= -->
+  <section class="sec" id="airport" aria-labelledby="airport-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:#6cc3ee"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-paper-plane"/></svg></span>
+      <div><p class="eyebrow">Airport</p><h2 id="airport-h">机场</h2></div>
+    </div>
+    <div class="airport pop">
+      <div class="talk static">
+        <div class="bubble static">
+          <span class="nametag" style="--tag:var(--blue-d);--tag-ink:#fff">Dodo 航空</span>
+          <span class="say"><span class="ghost">收到收到！要出发去哪里呀？隔壁的 Astra 岛上住着一只围着黄围巾的兔兔，要不要飞过去串个门？</span><span class="typed">收到收到！要出发去哪里呀？隔壁的 Astra 岛上住着一只围着黄围巾的兔兔，要不要飞过去串个门？</span></span>
+        </div>
+        <div class="choices static">
+          <a class="choice" href="../"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="../assets/icons.svg#i-hand-point-right"/></svg>好呀，飞去 Astra 岛！</a>
+          <button class="choice" type="button" data-reply="没问题～跑道随时为你开放，想出发了再来找我吧！"><svg class="hand" viewBox="0 0 512 512" aria-hidden="true"><use href="../assets/icons.svg#i-hand-point-right"/></svg>下次再说</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= MAIL ======================= -->
+  <section class="sec" id="mail" aria-labelledby="mail-h">
+    <div class="sec-head">
+      <span class="app-ico" style="--c:var(--pink)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-envelope"/></svg></span>
+      <div><p class="eyebrow">Contact</p><h2 id="mail-h">给岛主递一封信</h2></div>
+    </div>
+    <article class="letter pop">
+      <div class="postage" aria-hidden="true"><img src="avatar.jpg" alt="" width="432" height="422"><span>STARRY</span></div>
+      <div class="letter-paper">
+        <p class="to">亲爱的岛民：</p>
+        <p>想聊行业、看机会，或只是茶余饭后交流，都欢迎来信～</p>
+        <p class="letter-addr"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-envelope"/></svg>邮箱：cc77135@qq.com</p>
+        <p class="letter-addr"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-weixin"/></svg>微信/电话：18767168483</p>
+        <div class="letter-actions">
+          <a class="btn btn-pink" href="mailto:cc77135@qq.com"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-paper-plane"/></svg>寄一封信</a>
+          <button class="btn btn-ghost" type="button" data-copy="cc77135@qq.com"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-copy"/></svg>复制邮箱</button>
+          <button class="btn btn-ghost" type="button" data-copy="18767168483"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-copy"/></svg>复制微信号</button>
+        </div>
+        <p class="from">岛主<br><b>Starry</b></p>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Starry 的小岛工作台 · Made with ♥ · Hosted on GitHub Pages<br>动森风格的同人改版，与任天堂无关。</p>
+  <br>
+  <a class="btn btn-ghost" href="https://starry040916.github.io/Starry20040916.github.io/"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-house"/></svg>回到原版小岛</a>
+  <a class="btn btn-ghost" href="../"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg>飞去 Astra 岛</a>
+</footer>
+
+<!-- ======================= NOOKPHONE + HUD ======================= -->
+<div class="hud" aria-hidden="true">
+  <div class="hud-date"><span class="hud-md"></span><svg class="ico hud-wx"><use href="../assets/icons.svg#i-sun"/></svg><span class="hud-wd"></span></div>
+  <div class="hud-time"><span class="hud-hm"></span><small class="hud-ap"></small></div>
+</div>
+
+<button class="phone-fab" type="button" aria-haspopup="dialog" aria-controls="nookphone" aria-expanded="false">
+  <span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-mobile-screen-button"/></svg></span>
+  <span class="label">NookPhone</span>
+  <span class="ring" aria-hidden="true"></span>
+</button>
+
+<div class="phone-wrap" id="nookphone" role="dialog" aria-modal="true" aria-label="NookPhone" hidden>
+  <div class="phone-backdrop" data-close></div>
+  <div class="phone">
+    <div class="phone-screen">
+      <div class="phone-top"><span data-clock></span><span class="phone-bells"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#art-bellbag"/></svg><b data-bells>0</b></span></div>
+      <p class="phone-title">Starry Island</p>
+      <nav class="phone-apps" aria-label="小岛应用">
+        <a class="app" href="#breeze"><span class="app-ico" style="--c:var(--orange)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-bullhorn"/></svg></span>小岛播报</a>
+        <a class="app" href="#passport"><span class="app-ico" style="--c:var(--teal)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-id-card"/></svg></span>岛民护照</a>
+        <a class="app" href="#jobs"><span class="app-ico" style="--c:var(--blue-d)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane"/></svg></span>岗位地图</a>
+        <a class="app" href="#workbench"><span class="app-ico" style="--c:#c48a4f"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-hammer"/></svg></span>工作台</a>
+        <a class="app" href="#mail"><span class="app-ico" style="--c:var(--pink)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-envelope"/></svg></span>信箱</a>
+        <a class="app" href="https://github.com/Starry20040916" target="_blank" rel="noopener noreferrer"><span class="app-ico" style="--c:#6b5d8f"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-github"/></svg></span>GitHub</a>
+        <a class="app" href="../"><span class="app-ico" style="--c:#36bea6"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-plane-departure"/></svg></span>Astra 岛</a>
+        <button class="app" type="button" data-action="sound" aria-pressed="false"><span class="app-ico" style="--c:var(--purple)"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-volume-xmark"/></svg></span>岛民声音</button>
+        <button class="app" type="button" data-action="time"><span class="app-ico" style="--c:#f08d6e"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-clock-rotate-left"/></svg></span>时间旅行</button>
+      </nav>
+      <p class="phone-foot"><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-star"/></svg>NookPhone</p>
+    </div>
+    <button class="phone-close" type="button" data-close><svg class="ico" aria-hidden="true"><use href="../assets/icons.svg#i-xmark"/></svg>关闭</button>
+  </div>
+</div>
+
+<script src="../assets/acnh.js" defer></script>
+</body>
+</html>
